@@ -35,7 +35,6 @@
     ];
     # Configure your nixpkgs instance
     config = {
-      # Disable if you don't want unfree packages
       allowUnfree = true;
     };
   };
@@ -60,10 +59,13 @@
   };
 
   # Bootloader
-  boot.loader.grub.enable = true;
-  boot.loader.grub.efiSupport = true;
-  boot.loader.grub.efiInstallAsRemovable = true;
-  #boot.loader.grub.device = "/dev/vda";
+  boot.loader.grub = {
+  enable = true;
+  efiSupport = true;
+  efiInstallAsRemovable = true;
+  device = "nodev";  # Mandatory for UEFI installations
+  useOSProber = true;
+};
 
   networking.hostName = "TeaPotDesktopL";
   # Take hostname from flake configuration
@@ -91,7 +93,8 @@
   services.xserver.enable = true;
 
   # Enable the GNOME Desktop Environment.
-  services.xserver.displayManager.gdm.enable = true;
+  #services.xserver.displayManager.gdm.enable = true;
+  services.xserver.displayManager.sddm.enable = true;
   services.xserver.desktopManager.gnome.enable = true;
 
   # Configure keymap in X11
@@ -130,8 +133,10 @@
       isNormalUser = true;
       description = "ErrorTeaPot";
       extraGroups = ["wheel" "networkmanager"];
+      shell = pkgs.fish;
       packages = with pkgs; [
         # thunderbird
+	signal-desktop
       ];
     };
   };
@@ -139,9 +144,23 @@
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
-  #  vim
-  #  wget
+  	brave
   ];
+
+  /*programs.neovim.enable = true;
+  programs.firefox.enable = true;
+  programs.fish.enable = true;
+  programs.starship.enable = true;
+  programs.git.enable = true;*/
+
+  programs = {
+	neovim.enable = true;
+	firefox.enable = true;
+	fish.enable = true;
+	starship.enable = true;
+	git.enable = true;
+	hyprland.enable = true;
+  };
 
   # This setups a SSH server
   /*
