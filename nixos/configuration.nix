@@ -96,6 +96,7 @@
   #services.xserver.displayManager.gdm.enable = true;
   services.xserver.displayManager.sddm.enable = true;
   services.xserver.desktopManager.gnome.enable = true;
+  services.gnome.gnome-keyring.enable = true;
 
   # Configure keymap in X11
   services.xserver.xkb = {
@@ -158,7 +159,9 @@
 	firefox.enable = true;
 	fish.enable = true;
 	starship.enable = true;
-	git.enable = true;
+	git = {
+		enable = true;
+	};
 	hyprland.enable = true;
   };
 
