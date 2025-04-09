@@ -54,7 +54,11 @@
 
   # Enable home-manager and git
   programs.home-manager.enable = true;
-  programs.git.enable = true;
+  programs.git = {
+  	enable = true;
+	userName = "ErrorTeaPot";
+	userEmail = "github.z5tea@passinbox.com";
+  };
   #programs.alacritty.enable = true;
   programs.kitty.enable = true;
   programs.wofi.enable = true;
