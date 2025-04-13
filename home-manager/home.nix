@@ -53,6 +53,7 @@
   #programs.wofi.enable = true;
 
   wofi.enable = true;
+  waybar.enable = true;
 
   # Nicely reload system units when changing configs
   systemd.user.startServices = "sd-switch";
