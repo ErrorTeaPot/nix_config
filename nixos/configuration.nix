@@ -146,6 +146,7 @@
   # $ nix search wget
   environment.systemPackages = with pkgs; [
   	brave
+	networkmanagerapplet
   ];
 
   /*programs.neovim.enable = true;

@@ -16,10 +16,8 @@
         modules-left = [ "hyprland/workspaces" ];
         modules-center = [ ];
         modules-right = [ "custom/nm-applet" "wireplumber" "backlight" "battery" "tray" "clock" ];
-        custom = {
-          "nm-applet" = {
+        "custom/nm-applet" = {
             exec = "nm-applet";
-          };
         };
         network = {
           format-ethernet = "󰈁 {ifname}";
