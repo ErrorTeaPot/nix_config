@@ -5,5 +5,6 @@
 		./starship/starship.nix
 		./hyprland/hyprland.nix
 		./alacritty/alacritty.nix
+		./fish/fish.nix
 	];
 }
