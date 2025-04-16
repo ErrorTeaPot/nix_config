@@ -39,8 +39,12 @@
 	vesktop
       #signal_desktop
 	brave
+	swww
+	nerd-fonts.caskaydia-cove
     ];
   };
+
+  #fonts.fontconfig.enable = true;
 
   programs = {
     home-manager.enable = true;
@@ -49,15 +53,15 @@
       userName = "ErrorTeaPot";
       userEmail = "github.z5tea@passinbox.com";
     };
-    alacritty.enable = true;
+    #alacritty.enable = true;
     kitty.enable = true;
-    #starship.enable = true;
   };
 
   wofi.enable = true;
   waybar.enable = true;
   starship.enable = true;
   hyprland.enable = true;
+  alacritty.enable = true;
 
   # Nicely reload system units when changing configs
   systemd.user.startServices = "sd-switch";

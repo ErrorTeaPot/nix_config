@@ -4,5 +4,6 @@
 		./waybar/waybar.nix
 		./starship/starship.nix
 		./hyprland/hyprland.nix
+		./alacritty/alacritty.nix
 	];
 }
