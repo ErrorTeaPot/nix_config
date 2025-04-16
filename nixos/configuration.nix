@@ -137,7 +137,7 @@
       shell = pkgs.fish;
       packages = with pkgs; [
         # thunderbird
-	signal-desktop
+	# signal-desktop
       ];
     };
   };
@@ -145,8 +145,8 @@
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
-  	brave
-	networkmanagerapplet
+    # brave
+    networkmanagerapplet
   ];
 
   /*programs.neovim.enable = true;
@@ -159,10 +159,12 @@
 	neovim.enable = true;
 	firefox.enable = true;
 	fish.enable = true;
-	starship.enable = true;
+    #starship.enable = true;
+    /*
 	git = {
 		enable = true;
 	};
+    */
 	hyprland.enable = true;
   };
 

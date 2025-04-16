@@ -36,24 +36,28 @@
     username = "errorteapot";
     homeDirectory = "/home/errorteapot";
     packages = with pkgs; [
-	fastfetch
-	alacritty
 	vesktop
+      #signal_desktop
+	brave
     ];
   };
 
-  # Enable home-manager and git
-  programs.home-manager.enable = true;
-  programs.git = {
-  	enable = true;
-	userName = "ErrorTeaPot";
-	userEmail = "github.z5tea@passinbox.com";
+  programs = {
+    home-manager.enable = true;
+    git = {
+      enable = true;
+      userName = "ErrorTeaPot";
+      userEmail = "github.z5tea@passinbox.com";
+    };
+    alacritty.enable = true;
+    kitty.enable = true;
+    #starship.enable = true;
   };
-  programs.kitty.enable = true;
-  #programs.wofi.enable = true;
 
   wofi.enable = true;
   waybar.enable = true;
+  starship.enable = true;
+  hyprland.enable = true;
 
   # Nicely reload system units when changing configs
   systemd.user.startServices = "sd-switch";
