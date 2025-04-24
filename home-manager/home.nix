@@ -42,6 +42,7 @@
 	swww
 	nerd-fonts.caskaydia-cove
 	fastfetch
+	btop
     ];
   };
 
@@ -57,6 +58,8 @@
     #alacritty.enable = true;
     kitty.enable = true;
   };
+
+  services.ssh-agent.enable = true;
 
   wofi.enable = true;
   waybar.enable = true;
