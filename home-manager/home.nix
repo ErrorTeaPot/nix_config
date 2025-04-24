@@ -41,6 +41,7 @@
 	brave
 	swww
 	nerd-fonts.caskaydia-cove
+	fastfetch
     ];
   };
 

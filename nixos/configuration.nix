@@ -56,6 +56,12 @@
     # Opinionated: make flake registry and nix path match flake inputs
     registry = lib.mapAttrs (_: flake: {inherit flake;}) flakeInputs;
     nixPath = lib.mapAttrsToList (n: _: "${n}=flake:${n}") flakeInputs;
+
+    gc = {
+      automatic = true;
+      dates = "daily";
+      options = "--delete-older-than 30d";
+    };
   };
 
   # Bootloader
@@ -97,6 +103,7 @@
   services.xserver.displayManager.sddm.enable = true;
   services.xserver.desktopManager.gnome.enable = true;
   services.gnome.gnome-keyring.enable = true;
+  security.pam.services.sddm.enableGnomeKeyring = true;
 
   # Configure keymap in X11
   services.xserver.xkb = {
@@ -160,15 +167,11 @@
   programs = {
 	neovim.enable = true;
 	firefox.enable = true;
-	fish.enable = true;
-    #starship.enable = true;
-    /*
-	git = {
-		enable = true;
-	};
-    */
 	hyprland.enable = true;
+	fish.enable = true;
   };
+
+  
 
   # This setups a SSH server
   /*
