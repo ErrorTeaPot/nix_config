@@ -103,7 +103,12 @@
   services.xserver.displayManager.sddm.enable = true;
   services.xserver.desktopManager.gnome.enable = true;
   services.gnome.gnome-keyring.enable = true;
-  security.pam.services.sddm.enableGnomeKeyring = true;
+
+  security.pam.services = {
+	sddm.enableGnomeKeyring = true;
+  };
+
+  #services.dbus.packages = [ pkgs.gnome-keyring pkgs.gcr ];
 
   # Configure keymap in X11
   services.xserver.xkb = {
@@ -169,6 +174,10 @@
 	firefox.enable = true;
 	hyprland.enable = true;
 	fish.enable = true;
+	ssh = {
+		startAgent = false;
+    		enableAskPassword = true;
+	};
   };
 
   

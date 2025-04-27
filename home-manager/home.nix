@@ -43,6 +43,7 @@
 	nerd-fonts.caskaydia-cove
 	fastfetch
 	btop
+	gcr
     ];
   };
 
@@ -59,7 +60,17 @@
     kitty.enable = true;
   };
 
-  services.ssh-agent.enable = true;
+  /*services = {
+  	#ssh-agent.enable = true;
+	gnome-keyring = {
+		enable = true;
+		components = [
+			"pkcs11"
+			"secrets"
+			"ssh"
+		];
+	};
+  };*/
 
   wofi.enable = true;
   waybar.enable = true;
