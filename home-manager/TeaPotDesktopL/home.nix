@@ -37,7 +37,7 @@
     homeDirectory = "/home/errorteapot";
     packages = with pkgs; [
 	vesktop
-      #signal_desktop
+	signal-desktop
 	brave
 	swww
 	nerd-fonts.caskaydia-cove
@@ -52,6 +52,11 @@
       enable = true;
       userName = "ErrorTeaPot";
       userEmail = "github.z5tea@passinbox.com";
+    };
+    neovim = {
+      enable = true;
+      viAlias = true;
+      vimAlias = true;
     };
   };
 
