@@ -160,7 +160,6 @@
 
   programs = {
 	neovim.enable = true;
-	firefox.enable = true;
 	hyprland.enable = true;
 	fish.enable = true;
 	ssh = {
