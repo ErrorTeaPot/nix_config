@@ -6,5 +6,6 @@
 		./hyprland/hyprland.nix
 		./alacritty/alacritty.nix
 		./fish/fish.nix
+		./dunst/dunst.nix
 	];
 }

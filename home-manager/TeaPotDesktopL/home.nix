@@ -66,6 +66,7 @@
   hyprland.enable = true;
   alacritty.enable = true;
   fish.enable = true;
+  dunst.enable = true;
 
   # Nicely reload system units when changing configs
   systemd.user.startServices = "sd-switch";
