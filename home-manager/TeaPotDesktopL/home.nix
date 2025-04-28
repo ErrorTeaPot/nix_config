@@ -9,7 +9,8 @@
 }: {
   # You can import other home-manager modules here
   imports = [
-  	../modules/home-manager/default.nix
+    ../modules/home-manager/default.nix
+    ../default.nix
   ];
 
   nixpkgs = {
