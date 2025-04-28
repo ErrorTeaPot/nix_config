@@ -9,7 +9,6 @@
 }: {
   # You can import other home-manager modules here
   imports = [
-    #../modules/home-manager/default.nix
     ../default.nix
   ];
 
@@ -44,11 +43,8 @@
 	nerd-fonts.caskaydia-cove
 	fastfetch
 	btop
-	gcr
     ];
   };
-
-  #fonts.fontconfig.enable = true;
 
   programs = {
     home-manager.enable = true;
@@ -57,21 +53,7 @@
       userName = "ErrorTeaPot";
       userEmail = "github.z5tea@passinbox.com";
     };
-    #alacritty.enable = true;
-    kitty.enable = true;
   };
-
-  /*services = {
-  	#ssh-agent.enable = true;
-	gnome-keyring = {
-		enable = true;
-		components = [
-			"pkcs11"
-			"secrets"
-			"ssh"
-		];
-	};
-  };*/
 
   wofi.enable = true;
   waybar.enable = true;
