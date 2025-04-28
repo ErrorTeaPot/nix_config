@@ -29,7 +29,6 @@
       TeaPotDesktopL = nixpkgs.lib.nixosSystem {
         specialArgs = {inherit inputs outputs;};
         modules = [
-            #./nixos/configuration.nix
             ./hosts/TeaPotDesktopL/configuration.nix
             disko.nixosModules.disko
           ];
