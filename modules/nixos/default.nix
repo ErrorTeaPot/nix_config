@@ -1,0 +1,5 @@
+{
+	imports = [
+		./systemd_hardening/systemd_hardening.nix
+	];
+}
