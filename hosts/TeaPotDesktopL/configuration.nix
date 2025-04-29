@@ -12,7 +12,6 @@
     # inputs.hardware.nixosModules.common-ssd
 
     # You can also split up your configuration and import pieces of it here:
-    #../modules/nixos/btrfs-subvolumes.nix
     ./disk-config.nix
 
     # Import your generated (nixos-generate-config) hardware configuration
