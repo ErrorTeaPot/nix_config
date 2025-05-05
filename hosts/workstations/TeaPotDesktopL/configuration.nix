@@ -23,9 +23,6 @@
       # })
     ];
   };
-
-  locale.enable = true;
-
   networking.hostName = "TeaPotDesktopL";
   networking.networkmanager.enable = true;
 
