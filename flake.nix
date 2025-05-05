@@ -29,7 +29,7 @@
       TeaPotDesktopL = nixpkgs.lib.nixosSystem {
         specialArgs = {inherit inputs outputs;};
         modules = [
-            ./hosts/TeaPotDesktopL/configuration.nix
+            ./hosts/workstations/TeaPotDesktopL/configuration.nix
             disko.nixosModules.disko
           ];
       };
@@ -41,7 +41,7 @@
       "errorteapot@TeaPotDesktopL" = home-manager.lib.homeManagerConfiguration {
         pkgs = nixpkgs.legacyPackages.x86_64-linux; # Home-manager requires 'pkgs' instance
         extraSpecialArgs = {inherit inputs outputs;};
-        modules = [./home-manager/TeaPotDesktopL/home.nix];
+        modules = [./home-manager/workstations/TeaPotDesktopL/home.nix];
       };
     };
   };
