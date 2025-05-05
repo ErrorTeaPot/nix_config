@@ -1,7 +1,4 @@
 {
-#inputs,
-#lib,
-#config,
   pkgs,
   ...
 }: {
@@ -27,25 +24,12 @@
     ];
   };
 
-  # Bootloader
-  boot.loader.grub = {
-    enable = true;
-    efiSupport = true;
-    efiInstallAsRemovable = true;
-    device = "nodev";  # Mandatory for UEFI installations
-    useOSProber = true;
-  };
-
   locale.enable = true;
 
   networking.hostName = "TeaPotDesktopL";
   networking.networkmanager.enable = true;
 
-  # Enable the X11 windowing system.
   services.xserver.enable = true;
-
-  #services.xserver.displayManager.gdm.enable = true;
-  #services.xserver.desktopManager.gnome.enable = true;
 
   services.displayManager.sddm.enable = true;
   services.gnome.gnome-keyring.enable = true;
@@ -67,7 +51,6 @@
   services.printing.enable = true;
 
   # Enable sound with pipewire.
-  #hardware.pulseaudio.enable = false;
   services.pulseaudio.enable = false;
   security.rtkit.enable = true;
   services.pipewire = {
