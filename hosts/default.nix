@@ -2,6 +2,7 @@
   inputs,
   lib,
   config,
+  ...
 }: {
   imports = [
     ../modules/nixos/default.nix
