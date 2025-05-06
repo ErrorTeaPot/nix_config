@@ -43,6 +43,8 @@
 	nerd-fonts.caskaydia-cove
 	fastfetch
 	btop
+	stremio
+	lazygit
     ];
   };
 
