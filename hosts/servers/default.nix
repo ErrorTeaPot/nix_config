@@ -8,4 +8,5 @@
     osProber = false;
     latestGenerationMax = 5;
   };
+  ssh_hardening = true;
 }
