@@ -45,6 +45,8 @@
 	btop
 	stremio
 	lazygit
+	lf
+	tree
     ];
   };
 

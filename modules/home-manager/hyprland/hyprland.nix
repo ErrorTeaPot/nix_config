@@ -21,7 +21,7 @@
         # Execute commands at launch
         exec-once = [
           "systemctl --user start hyprpolkitagent"
-          #"swww init; sleep 0.05; swww img ${toString config.home}/Pictures/Wallpapers/mario_8_bit.gif"
+          #"swww-daemon; sleep 0.05; swww img $HOME/Pictures/Wallpapers/mario_8_bit.gif"
           "waybar"
           "dbus-update-activation-environment --all"
           "gammastep -l 48.8:2.3"
