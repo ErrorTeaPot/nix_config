@@ -26,7 +26,7 @@
   };
 
   reverse_proxy.enable = true;
-  rss.enable = true;
+  #rss.enable = true;
 
   # Open ports in the firewall.
   networking.firewall.allowedTCPPorts = [ ];

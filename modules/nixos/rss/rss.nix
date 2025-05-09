@@ -12,6 +12,7 @@ in {
     enable = mkEnableOption "RSS feed read";
   };
 
+/*
   config = mkIf cfg.enable {
     # SOPS secret declaration (entire YAML file)
     sops.secrets."miniflux" = {
