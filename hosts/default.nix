@@ -34,4 +34,7 @@
       options = "--delete-older-than 7d";
     };
   };
+  sops.defaultSopsFile = ../secrets/secrets.yaml;
+  sops.defaultSopsFormat = "yaml";
+  sops.age.keyFile = "/home/errorteapot/.config/sops/age/keys.txt";
 }
