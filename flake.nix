@@ -12,6 +12,10 @@
     # Disko
     disko.url = "github:nix-community/disko/latest";
     disko.inputs.nixpkgs.follows = "nixpkgs";
+
+    # Sops nix
+    sops-nix.url = "github:Mic92/sops-nix";
+    sops-nix.inputs.nixpkgs.follows = "nixpkgs";
   };
 
   outputs = {
@@ -19,6 +23,7 @@
     nixpkgs,
     home-manager,
     disko,
+    sops-nix,
     ...
   } @ inputs: let
     inherit (self) outputs;
@@ -38,6 +43,7 @@
         modules = [
             ./hosts/servers/mikoshi/configuration.nix
             disko.nixosModules.disko
+            sops-nix.nixosModules.sops
           ];
       };
     };
@@ -53,7 +59,9 @@
       "errorteapot@mikoshi" = home-manager.lib.homeManagerConfiguration {
         pkgs = nixpkgs.legacyPackages.x86_64-linux; # Home-manager requires 'pkgs' instance
         extraSpecialArgs = {inherit inputs outputs;};
-        modules = [./home-manager/servers/mikoshi/home.nix];
+        modules = [
+            ./home-manager/servers/mikoshi/home.nix
+        ];
       };
     };
   };
