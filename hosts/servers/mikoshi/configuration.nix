@@ -1,10 +1,13 @@
 {
   pkgs,
   config,
+  modulesPath,
   ...
 }: {
   # You can import other NixOS modules here
   imports = [
+    # For nixos-anywhere to add non-free drivers in hardware-config.nix
+    (modulesPath + "/installer/scan/not-detected.nix")
     ./disk-config.nix
     ./hardware-configuration.nix
     ../default.nix
