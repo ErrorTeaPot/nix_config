@@ -10,31 +10,13 @@ let
 in {
   options.rss = {
     enable = mkEnableOption "RSS feed read";
+    authFile = mkOption { type = types.path; };
   };
 
-/*
   config = mkIf cfg.enable {
-    # SOPS secret declaration (entire YAML file)
-    sops.secrets."miniflux" = {
-      owner = "miniflux";
-      group = "miniflux";
-      mode = "0400";
-    };
-
-    # SOPS template for Miniflux adminCredentialsFile
-    sops.templates."miniflux-admin-credentials" = {
-      content = ''
-        ADMIN_USERNAME=${config.sops.secrets."miniflux".data.miniflux.admin_username}
-        ADMIN_PASSWORD=${config.sops.secrets."miniflux".data.miniflux.admin_password}
-      '';
-      owner = "miniflux";
-      group = "miniflux";
-      mode = "0400";
-    };
-
     services.miniflux = {
       enable = true;
-      adminCredentialsFile = config.sops.templates."miniflux-admin-credentials".path;
+      adminCredentialsFile = cfg.authFile;
       config = {
         CREATE_ADMIN = 1;
         LISTEN_ADDR = "127.0.0.1:7381";

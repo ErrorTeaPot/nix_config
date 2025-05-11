@@ -5,6 +5,6 @@
 		./boot/boot.nix
 		./ssh_hardening/ssh_hardening.nix
 		./reverse_proxy/reverse_proxy.nix
-		#./rss/rss.nix
+		./rss/rss.nix
 	];
 }
