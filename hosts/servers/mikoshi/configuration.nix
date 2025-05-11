@@ -1,5 +1,6 @@
 {
   pkgs,
+  config,
   ...
 }: {
   # You can import other NixOS modules here
@@ -25,8 +26,19 @@
 	fish.enable = true;
   };
 
-  reverse_proxy.enable = true;
-  #rss.enable = true;
+  #reverse_proxy.enable = true;
+
+  # RSS server
+  sops.secrets."miniflux" = {
+      owner = "miniflux";
+      group = "miniflux";
+      mode = "0400";
+    };
+
+  rss= {
+    enable = true;
+    authFile = config.sops.secrets.miniflux.path;
+  };
 
   # Open ports in the firewall.
   networking.firewall.allowedTCPPorts = [ ];
