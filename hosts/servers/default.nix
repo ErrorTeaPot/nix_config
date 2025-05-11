@@ -1,4 +1,8 @@
 {
+  pkgs,
+  ...
+}:
+{
   imports = [
     ../default.nix
   ];
@@ -9,7 +13,7 @@
     latestGenerationMax = 5;
   };
 
-  ssh_hardening = true;
+  ssh_hardening.enable = true;
 
   users.users = {
     errorteapot = {
