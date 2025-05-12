@@ -53,7 +53,7 @@
             ./hosts/servers/agwe/configuration.nix
             disko.nixosModules.disko
             sops-nix.nixosModules.sops
-	    ./hosts/servers/agwe/hardware-configuration.nix
+            #./hosts/servers/agwe/hardware-configuration.nix
           ];
       };
     };
