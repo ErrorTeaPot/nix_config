@@ -26,6 +26,7 @@
       openssh.authorizedKeys.keys = [
 	"ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIP1KhwTRJecS2kYGqAeHXvivJ2iGaKVM/okZql+oJ+Vr errorteapot@TeaPotDesktopL"
 	"ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIBPQLLFjq1/8alUiLTT1JPSzODrI+dWl0ljf9GmzPd7I errorteapot@TeaPotLaptop"
+	"ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIJyyAfU0petElWTiMR+tm9+ohErzlYYm0hlKwflrmfe+"
       ];
     };
     /*
