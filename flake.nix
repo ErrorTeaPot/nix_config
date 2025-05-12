@@ -47,6 +47,15 @@
 	    ./hosts/servers/mikoshi/hardware-configuration.nix
           ];
       };
+      agwe = nixpkgs.lib.nixosSystem {
+        specialArgs = {inherit inputs outputs;};
+        modules = [
+            ./hosts/servers/agwe/configuration.nix
+            disko.nixosModules.disko
+            sops-nix.nixosModules.sops
+	    ./hosts/servers/agwe/hardware-configuration.nix
+          ];
+      };
     };
 
     # Standalone home-manager configuration entrypoint
