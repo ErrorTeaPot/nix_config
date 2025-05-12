@@ -36,7 +36,7 @@
       owner = "miniflux";
       group = "miniflux";
       mode = "0400";
-    };
+  };
 
   rss= {
     enable = true;
