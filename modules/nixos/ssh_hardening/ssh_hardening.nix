@@ -10,6 +10,7 @@ in {
 
   config = mkIf cfg.enable {
     services.openssh = {
+      enable = true;
       allowSFTP = false;
       # https://infosec.mozilla.org/guidelines/openssh#modern-openssh-67
       settings = {
