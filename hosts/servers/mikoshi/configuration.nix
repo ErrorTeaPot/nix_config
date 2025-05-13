@@ -21,6 +21,8 @@
   # Configure console keymap
   console.keyMap = "us-acentos";
 
+  users.users.errorteapot.hashedPassword = "$y$j9T$N5RyYEtWyLQLDXM/S8PnP.$uOUfunQ/Q4dFmM7jhb9uGKOKXZ4eYDknfsNRfVXTTZB";
+
   environment.systemPackages = with pkgs; [
   ];
 
