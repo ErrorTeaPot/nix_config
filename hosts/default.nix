@@ -34,6 +34,18 @@
       options = "--delete-older-than 7d";
     };
   };
+
+  programs.neovim = {
+    enable = true;
+    defaultEditor = true;
+    vimAlias = true;
+    viAlias = true;
+  };
+
+  programs.git = {
+    enable = true;
+  };
+
   sops.defaultSopsFile = ../secrets/secrets.yaml;
   sops.defaultSopsFormat = "yaml";
   sops.age.keyFile = "/home/errorteapot/.config/sops/age/keys.txt";
