@@ -36,6 +36,7 @@
         modules = [
             ./hosts/workstations/TeaPotDesktopL/configuration.nix
             disko.nixosModules.disko
+	    sops-nix.nixosModules.sops
           ];
       };
       mikoshi = nixpkgs.lib.nixosSystem {
