@@ -31,7 +31,18 @@
 	fish.enable = true;
   };
 
-  #reverse_proxy.enable = true;
+/*
+  sops.secrets."dns-provider-api-key" = {
+    owner = config.services.caddy.user;
+    group = config.services.caddy.group;
+    mode = "0400";
+  };
+
+  reverse_proxy = {
+    enable = true;
+    DNSProviderApiKeyFile = config.sops.secrets.dns-provider-api-key.path;
+  };
+*/
 
   # RSS server
   /*
