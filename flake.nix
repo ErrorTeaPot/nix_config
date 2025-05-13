@@ -45,7 +45,6 @@
             ./hosts/servers/mikoshi/configuration.nix
             disko.nixosModules.disko
             sops-nix.nixosModules.sops
-	    ./hosts/servers/mikoshi/hardware-configuration.nix
           ];
       };
       agwe = nixpkgs.lib.nixosSystem {
