@@ -32,6 +32,7 @@
   #reverse_proxy.enable = true;
 
   # RSS server
+  /*
   sops.secrets."rss" = {
       owner = "miniflux";
       group = "miniflux";
@@ -42,6 +43,7 @@
     enable = true;
     authFile = config.sops.secrets.rss.path;
   };
+  */
 
   # Open ports in the firewall.
   networking.firewall.allowedTCPPorts = [ ];
