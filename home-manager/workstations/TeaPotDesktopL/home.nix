@@ -68,6 +68,7 @@
   waybar.enable = true;
   starship.enable = true;
   hyprland.enable = true;
+  hyprlock.enable = true;
   alacritty.enable = true;
   fish.enable = true;
   dunst.enable = true;
