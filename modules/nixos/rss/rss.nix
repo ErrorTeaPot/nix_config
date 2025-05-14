@@ -26,12 +26,12 @@ in {
 
     ### REVERSE PROXY ###
     services.caddy = {
-      virtualHosts.${url}.extraConfig = ''
-        reverse_proxy http://localhost:${toString srv.config.PORT}
-        tls ${certloc}/cert.pem ${certloc}/key.pem {
-          protocols tls1.3
-        }
-      '';
+      virtualHosts.${url} = {
+        extraConfig = ''
+          reverse_proxy http://localhost:${toString srv.config.PORT}
+        '';
+        useACMEHost = "teapot.eu.org";
+      };
     };
 
     /*
