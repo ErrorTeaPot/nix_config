@@ -56,6 +56,9 @@
       enable = true;
       userName = "ErrorTeaPot";
       userEmail = "github.z5tea@passinbox.com";
+      extraConfig = {
+	pull.rebase = false;
+      };
     };
     neovim = {
       enable = true;
