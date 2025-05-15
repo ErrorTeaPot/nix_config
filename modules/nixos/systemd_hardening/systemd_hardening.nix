@@ -30,6 +30,13 @@
 	  IPAddressDeny = "any";
 	};
       };
+      NetworkManager-dispatcher = {
+	serviceConfig = {
+	  ProtectHome = true;
+	  ProtectKernelTunables = true;
+	  ProtectKernelModules = true;
+	};
+      };
     };
   };
 }
