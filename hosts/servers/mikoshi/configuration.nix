@@ -68,6 +68,17 @@
   };
   */
 
+  sops.secrets."nextcloud" = {
+      owner = "nextcloud";
+      group = "nextcloud";
+      mode = "0400";
+  };
+
+  nextcloud = {
+    enable = true;
+    authFile = config.sops.secrets."nextcloud".path;
+  };
+
   # Open ports in the firewall.
   networking.firewall.allowedTCPPorts = [ ];
   networking.firewall.allowedUDPPorts = [ ];
