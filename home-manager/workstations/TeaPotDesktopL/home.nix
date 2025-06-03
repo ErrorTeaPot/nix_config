@@ -47,6 +47,7 @@
 	lazygit
 	lf
 	tree
+	evince
     ];
   };
 
@@ -64,6 +65,16 @@
       enable = true;
       viAlias = true;
       vimAlias = true;
+    };
+  };
+
+  xdg.mimeApps = {
+    enable = true;
+    associations.added = {
+      "application/pdf" = ["org.gnome.Evince.desktop"];
+    };
+    defaultApplications = {
+      "application/pdf" = ["org.gnome.Evince.desktop"];
     };
   };
 
