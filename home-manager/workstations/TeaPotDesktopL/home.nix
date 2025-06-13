@@ -40,13 +40,8 @@
 	signal-desktop
 	brave
 	swww
-	nerd-fonts.caskaydia-cove
 	fastfetch
-	btop
 	stremio
-	lazygit
-	lf
-	tree
 	evince
     ];
   };
@@ -61,13 +56,6 @@
 	pull.rebase = false;
       };
     };
-    /*
-    neovim = {
-      enable = true;
-      viAlias = true;
-      vimAlias = true;
-    };
-    */
   };
 
   xdg.mimeApps = {
@@ -82,11 +70,8 @@
 
   wofi.enable = true;
   waybar.enable = true;
-  # starship.enable = true;
   hyprland.enable = true;
   hyprlock.enable = true;
-  # alacritty.enable = true;
-  # fish.enable = true;
   dunst.enable = true;
 
   # Nicely reload system units when changing configs

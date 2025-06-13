@@ -1,4 +1,8 @@
 {
+	pkgs,
+	...
+}:
+{
 	imports = [
 		../default.nix
 	];
@@ -11,6 +15,14 @@
 			vimAlias = true;
 		};
 	};
+
+	home.packages = with pkgs; [
+		lazygit
+		lf
+		btop
+		nerd-fonts.caskaydia-cove
+		tree
+	];
 
 	# Modules
 	starship.enable = true;
