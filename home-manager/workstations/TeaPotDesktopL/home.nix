@@ -61,11 +61,13 @@
 	pull.rebase = false;
       };
     };
+    /*
     neovim = {
       enable = true;
       viAlias = true;
       vimAlias = true;
     };
+    */
   };
 
   xdg.mimeApps = {
@@ -80,11 +82,11 @@
 
   wofi.enable = true;
   waybar.enable = true;
-  starship.enable = true;
+  # starship.enable = true;
   hyprland.enable = true;
   hyprlock.enable = true;
-  alacritty.enable = true;
-  fish.enable = true;
+  # alacritty.enable = true;
+  # fish.enable = true;
   dunst.enable = true;
 
   # Nicely reload system units when changing configs
