@@ -24,6 +24,9 @@
     username = "errorteapot";
     homeDirectory = "/home/errorteapot";
     packages = with pkgs; [
+      pwntools
+      hashcat
+      seclists
     ];
   };
 
