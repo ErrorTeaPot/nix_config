@@ -36,7 +36,7 @@
 	  live_config_reload = true;
 	};
       };
-      #theme = "rose_pine_moon";
+      theme = "rose_pine_moon";
     };
   };
 }
