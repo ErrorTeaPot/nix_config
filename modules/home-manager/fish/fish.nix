@@ -16,6 +16,9 @@
         . ~/.nix-profile/etc/profile.d/nix.fish
       end
       '';
+      functions = {
+        fish_greeting = "";
+      };
     };
   };
 }
