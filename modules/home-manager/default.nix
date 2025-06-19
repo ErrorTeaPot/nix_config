@@ -8,5 +8,6 @@
 		./alacritty/alacritty.nix
 		./fish/fish.nix
 		./dunst/dunst.nix
+		./tooling/tooling.nix
 	];
 }
