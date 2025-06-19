@@ -10,8 +10,11 @@
   config = lib.mkIf config.fish.enable {
     programs.fish = {
       enable = true;
+      # 	starship init fish | source
       interactiveShellInit = ''
-	starship init fish | source
+	if test -e ~/.nix-profile/etc/profile.d/nix.fish
+        . ~/.nix-profile/etc/profile.d/nix.fish
+      end
       '';
     };
   };
