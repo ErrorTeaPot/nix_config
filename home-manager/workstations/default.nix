@@ -18,13 +18,23 @@
 		home-manager.enable = true;
 	};
 
-	home.packages = with pkgs; [
-		lazygit
-		#lf
-		btop
-		nerd-fonts.caskaydia-cove
-		tree
-	];
+	home = {
+		packages = with pkgs; [
+			lazygit
+			btop
+			nerd-fonts.caskaydia-cove
+			tree
+		];
+		sessionPath = [
+			"$HOME/.local/bin"
+			"$HOME/.config/cargo/bin"
+		];
+		sessionVariables = {
+			RUSTUP_HOME = "$HOME/.config/rustup";
+			XDG_CONFIG_HOME = "$HOME/.config";
+			CARGO_HOME = "$HOME/.config/cargo";
+		};
+	};
 
 	# Modules
 	starship.enable = true;
