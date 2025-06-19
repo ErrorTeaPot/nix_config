@@ -9,16 +9,18 @@
 
 	# Programs
 	programs = {
-		neovim = {
+		git = {
 			enable = true;
-			viAlias = true;
-			vimAlias = true;
+			extraConfig = {
+				pull.rebase = false;
+			};
 		};
+		home-manager.enable = true;
 	};
 
 	home.packages = with pkgs; [
 		lazygit
-		lf
+		#lf
 		btop
 		nerd-fonts.caskaydia-cove
 		tree
@@ -26,5 +28,5 @@
 
 	# Modules
 	starship.enable = true;
-	alacritty.enable = true;
+	#alacritty.enable = true;
 }

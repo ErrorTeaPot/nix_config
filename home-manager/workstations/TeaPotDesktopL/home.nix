@@ -47,14 +47,9 @@
   };
 
   programs = {
-    home-manager.enable = true;
     git = {
-      enable = true;
       userName = "ErrorTeaPot";
       userEmail = "github.z5tea@passinbox.com";
-      extraConfig = {
-	pull.rebase = false;
-      };
     };
   };
 
