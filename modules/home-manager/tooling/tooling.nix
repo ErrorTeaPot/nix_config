@@ -13,6 +13,7 @@
         hashcat
         wordlists
         ghidra
+        gef
     ];
   };
   };
