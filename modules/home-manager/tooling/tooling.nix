@@ -1,4 +1,9 @@
-{ pkgs, lib, config, ... }:
+{
+  pkgs,
+  lib,
+  config,
+  ...
+}:
 {
   options = {
     tooling = {
@@ -14,7 +19,7 @@
         wordlists
         ghidra
         gef
-    ];
-  };
+      ];
+    };
   };
 }
