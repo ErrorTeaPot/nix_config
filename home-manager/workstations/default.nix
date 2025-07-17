@@ -24,6 +24,7 @@
 			btop
 			nerd-fonts.caskaydia-cove
 			tree
+			nixfmt-rfc-style
 		];
 		sessionPath = [
 			"$HOME/.local/bin"
