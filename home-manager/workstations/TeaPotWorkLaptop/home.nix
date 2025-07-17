@@ -21,7 +21,9 @@
   home = {
     username = "glesaout";
     homeDirectory = "/home/glesaout";
-    packages = with pkgs; [];
+    packages = with pkgs; [
+      typst
+    ];
   };
 
   programs = {
