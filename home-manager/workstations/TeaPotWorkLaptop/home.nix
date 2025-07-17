@@ -4,13 +4,14 @@
   config,
   pkgs,
   ...
-}: {
+}:
+{
   imports = [
     ../default.nix
   ];
 
   nixpkgs = {
-    overlays = [];
+    overlays = [ ];
     config = {
       allowUnfree = true;
       # Workaround for https://github.com/nix-community/home-manager/issues/2942
