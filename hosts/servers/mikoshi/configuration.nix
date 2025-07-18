@@ -3,7 +3,8 @@
   config,
   modulesPath,
   ...
-}: {
+}:
+{
   # You can import other NixOS modules here
   imports = [
     # For nixos-anywhere to add non-free drivers in hardware-config.nix
@@ -14,14 +15,17 @@
   ];
 
   nixpkgs = {
-    overlays = [];
+    overlays = [ ];
   };
+
   networking = {
     hostName = "mikoshi";
-    interfaces.ens18.ipv4.addresses = [{
-      address = "192.168.67.5";
-      prefixLength = 24;
-    }];
+    interfaces.ens18.ipv4.addresses = [
+      {
+        address = "192.168.67.5";
+        prefixLength = 24;
+      }
+    ];
     defaultGateway = {
       address = "192.168.67.1";
       interface = "ens18";
@@ -36,42 +40,37 @@
   environment.systemPackages = with pkgs; [
   ];
 
-  programs = {
-	neovim.enable = true;
-	fish.enable = true;
-  };
+  /*
+    sops.secrets."dns-provider-api-key" = {
+      owner = config.services.caddy.user;
+      group = config.services.caddy.group;
+      mode = "0400";
+    };
 
-/*
-  sops.secrets."dns-provider-api-key" = {
-    owner = config.services.caddy.user;
-    group = config.services.caddy.group;
-    mode = "0400";
-  };
-
-  reverse_proxy = {
-    enable = true;
-    DNSProviderApiKeyFile = config.sops.secrets.dns-provider-api-key.path;
-  };
-*/
+    reverse_proxy = {
+      enable = true;
+      DNSProviderApiKeyFile = config.sops.secrets.dns-provider-api-key.path;
+    };
+  */
 
   # RSS server
   /*
-  sops.secrets."rss" = {
-      owner = "miniflux";
-      group = "miniflux";
-      mode = "0400";
-  };
+    sops.secrets."rss" = {
+        owner = "miniflux";
+        group = "miniflux";
+        mode = "0400";
+    };
 
-  rss= {
-    enable = true;
-    authFile = config.sops.secrets.rss.path;
-  };
+    rss= {
+      enable = true;
+      authFile = config.sops.secrets.rss.path;
+    };
   */
 
   sops.secrets."nextcloud" = {
-      owner = "nextcloud";
-      group = "nextcloud";
-      mode = "0400";
+    owner = "nextcloud";
+    group = "nextcloud";
+    mode = "0400";
   };
 
   nextcloud = {
