@@ -4,15 +4,15 @@
   config,
   pkgs,
   ...
-}: {
+}:
+{
   # You can import other home-manager modules here
   imports = [
     ../default.nix
   ];
 
   nixpkgs = {
-    overlays = [];
-    # Configure your nixpkgs instance
+    overlays = [ ];
     config = {
       allowUnfree = true;
       # Workaround for https://github.com/nix-community/home-manager/issues/2942
@@ -24,11 +24,11 @@
     username = "errorteapot";
     homeDirectory = "/home/errorteapot";
     packages = with pkgs; [
-	fastfetch
-	btop
-	lazygit
-	lf
-	tree
+      fastfetch
+      btop
+      lazygit
+      lf
+      tree
     ];
   };
 
