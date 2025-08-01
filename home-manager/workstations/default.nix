@@ -39,5 +39,4 @@
 
   # Modules
   starship.enable = true;
-  #alacritty.enable = true;
 }

@@ -27,10 +27,6 @@
     ];
   };
 
-  programs = {
-    home-manager.enable = true;
-  };
-
   tooling.enable = true;
 
   # Nicely reload system units when changing configs
