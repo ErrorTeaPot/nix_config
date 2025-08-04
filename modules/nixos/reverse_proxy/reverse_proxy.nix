@@ -31,7 +31,6 @@ in
       certs."teapot.eu.org" = {
         extraDomainNames = [ "*.teapot.eu.org" ];
         dnsProvider = "desec";
-        dnsResolver = "ns1.desec.io:53"; # deSec DNS ns1 serve
         dnsPropagationCheck = true;
         environmentFile = cfg.DNSProviderApiKeyFile;
       };
