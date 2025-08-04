@@ -1,4 +1,9 @@
-{ config, lib, pkgs, ... }:
+{
+  config,
+  lib,
+  pkgs,
+  ...
+}:
 with lib;
 let
   # Shorter name to access a final setting
@@ -6,13 +11,23 @@ let
   cfg = config.nextcloud;
   srv = config.services.nextcloud;
   url = "nc.teapot.eu.org";
-in {
+  port = 8003;
+in
+{
   options.nextcloud = {
     enable = mkEnableOption "Nextcloud suite";
     authFile = mkOption { type = types.path; };
   };
 
   config = mkIf cfg.enable {
+    # Change default port
+    services.nginx.virtualHosts.${toString url}.listen = [
+      {
+        addr = "127.0.0.1";
+        port = port;
+      }
+    ];
+
     services.nextcloud = {
       enable = true;
       package = pkgs.nextcloud31;
@@ -21,6 +36,7 @@ in {
       https = true;
 
       # Install and configure database automatically
+      database.createLocally = true;
       config.dbtype = "sqlite";
 
       # Applies recommended settings to Redis for small instances
@@ -49,26 +65,26 @@ in {
     services.caddy = {
       virtualHosts.${url} = {
         extraConfig = ''
-          reverse_proxy http://localhost:${toString srv.config.PORT}
+          reverse_proxy http://localhost:${toString port}
         '';
         useACMEHost = "teapot.eu.org";
       };
     };
 
     /*
-    services.adguardhome.settings.filtering.rewrites = [{
-      domain = url;
-      answer =
-        (builtins.elemAt (config.networking.interfaces.bond0.ipv4.addresses)
-          0).address;
-    }];
+      services.adguardhome.settings.filtering.rewrites = [{
+        domain = url;
+        answer =
+          (builtins.elemAt (config.networking.interfaces.bond0.ipv4.addresses)
+            0).address;
+      }];
 
-    ### HOMEPAGE ###
-    def.homepage.categories."Other"."Miniflux " = {
-      icon = "rsshub.png";
-      description = "RSS feed handler";
-      href = "https://${url}";
-    };
+      ### HOMEPAGE ###
+      def.homepage.categories."Other"."Miniflux " = {
+        icon = "rsshub.png";
+        description = "RSS feed handler";
+        href = "https://${url}";
+      };
     */
   };
 }

@@ -29,4 +29,9 @@
       ];
     };
   };
+networking = {
+    useDHCP = false;
+    nameservers = [ "192.168.67.1" ];
+  };
+
 }
