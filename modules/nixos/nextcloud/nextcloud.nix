@@ -59,12 +59,11 @@ in
         "OC\\Preview\\XBitmap"
         "OC\\Preview\\HEIC"
       ];
+      # Add trusted proxies to avoid spoffing
+      settings.trusted_proxies = [
+        "127.0.0.1"
+      ];
     };
-
-    # Add trusted proxies to avoid spoffing
-    settings.trusted_proxies = [
-      "127.0.0.1"
-    ];
 
     ### REVERSE PROXY ###
     services.caddy = {
