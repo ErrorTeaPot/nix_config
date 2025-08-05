@@ -38,6 +38,10 @@
       };
     };
 
+  boot.loader.grub = {
+    enable = true;
+  };
+
   programs.neovim = {
     enable = true;
     defaultEditor = true;
