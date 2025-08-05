@@ -7,6 +7,7 @@
     ../default.nix
   ];
 
+  # Servers don't need that much generations
   boot.loader.grub = {
     configurationLimit = 5;
   };
@@ -31,5 +32,4 @@
     useDHCP = false;
     nameservers = [ "192.168.67.1" ];
   };
-
 }
