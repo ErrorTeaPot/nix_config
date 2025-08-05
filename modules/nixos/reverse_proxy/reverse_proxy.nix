@@ -1,7 +1,6 @@
 { config, lib, ... }:
 with lib;
 let
-  # Shorter name to access a final setting
   cfg = config.reverse_proxy;
   srv = config.services.caddy;
 in
@@ -12,8 +11,21 @@ in
   };
 
   config = mkIf cfg.enable {
+
+    # Add a service user
+    users.users.reverse-proxy = {
+      isSystemUser = true;
+      group = "reverse-proxy";
+    };
+
+    # Add a service group
+    users.groups.reverse-proxy = { };
+
+    # Enables caddy web server to be used as a reverse proxy
     services.caddy = {
       enable = true;
+      user = "reverse-proxy";
+      group = "reverse-proxy";
     };
 
     networking.firewall.allowedTCPPorts = [
