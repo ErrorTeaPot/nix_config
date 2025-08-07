@@ -37,7 +37,7 @@ in
 
       # Install and configure database automatically
       database.createLocally = true;
-      config.dbtype = "pgsql";
+      config.dbtype = "sqlite";
 
       # Applies recommended settings to Redis for small instances
       configureRedis = true;
