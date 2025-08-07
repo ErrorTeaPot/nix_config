@@ -68,6 +68,18 @@ in
       settings.trusted_domains = [
         "nc.teapot.eu.org"
       ];
+
+      # Add apps to Nextcloud
+      extraApps = with srv.package.packages.apps; {
+        inherit calendar contacts tasks;
+      };
+
+      # Set default phone region
+      settings.default_phone_region = "FR";
+
+      # Force HTTPS for link generation
+      settings.overwriteprotocol = "https";
+
     };
 
     ### REVERSE PROXY ###
@@ -87,13 +99,6 @@ in
           (builtins.elemAt (config.networking.interfaces.bond0.ipv4.addresses)
             0).address;
       }];
-
-      ### HOMEPAGE ###
-      def.homepage.categories."Other"."Miniflux " = {
-        icon = "rsshub.png";
-        description = "RSS feed handler";
-        href = "https://${url}";
-      };
     */
   };
 }
