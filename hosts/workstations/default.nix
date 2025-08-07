@@ -3,10 +3,10 @@
     ../default.nix
   ];
 
-  boot = {
-    enable = true;
-    osProber = true;
-    latestGenerationMax = 10;
+  # Enables OsProber for dual boot, set a good amount of generations
+  boot.loader.grub = {
+    useOSProber = true;
+    configurationLimit = 10;
   };
 
   locale.enable = true;

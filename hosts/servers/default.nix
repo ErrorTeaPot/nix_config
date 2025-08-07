@@ -7,10 +7,9 @@
     ../default.nix
   ];
 
-  boot = {
-    enable = true;
-    osProber = false;
-    latestGenerationMax = 5;
+  # Servers don't need that much generations
+  boot.loader.grub = {
+    configurationLimit = 5;
   };
 
   ssh_hardening.enable = true;
@@ -19,19 +18,18 @@
     errorteapot = {
       isNormalUser = true;
       description = "ErrorTeaPot";
-      extraGroups = ["wheel"];
+      extraGroups = [ "wheel" ];
       shell = pkgs.fish;
       packages = with pkgs; [
       ];
       openssh.authorizedKeys.keys = [
-	"ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIEHnXHo03QDAr1wWMGeURKgNOkJsholGnzl+8w5O7oyl"
-	"ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIP1KhwTRJecS2kYGqAeHXvivJ2iGaKVM/okZql+oJ+Vr"
+        "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIEHnXHo03QDAr1wWMGeURKgNOkJsholGnzl+8w5O7oyl"
+        "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIP1KhwTRJecS2kYGqAeHXvivJ2iGaKVM/okZql+oJ+Vr"
       ];
     };
   };
-networking = {
+  networking = {
     useDHCP = false;
     nameservers = [ "192.168.67.1" ];
   };
-
 }

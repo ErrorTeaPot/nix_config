@@ -38,6 +38,14 @@
       };
     };
 
+  # Enable grub as boot loader
+  boot.loader.grub = {
+    enable = true;
+    efiSupport = true;
+    efiInstallAsRemovable = true;
+    device = "nodev";
+  };
+
   programs.neovim = {
     enable = true;
     defaultEditor = true;
