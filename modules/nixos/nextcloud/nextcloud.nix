@@ -37,7 +37,7 @@ in
 
       # Install and configure database automatically
       database.createLocally = true;
-      config.dbtype = "sqlite";
+      config.dbtype = "pgsql";
 
       # Applies recommended settings to Redis for small instances
       configureRedis = true;
@@ -59,6 +59,7 @@ in
         "OC\\Preview\\XBitmap"
         "OC\\Preview\\HEIC"
       ];
+
       # Add trusted proxies to avoid spoffing
       settings.trusted_proxies = [
         "127.0.0.1"
@@ -69,17 +70,16 @@ in
         "nc.teapot.eu.org"
       ];
 
-      # Add apps to Nextcloud
-      extraApps = with srv.package.packages.apps; {
-        inherit calendar contacts tasks;
-      };
-
       # Set default phone region
       settings.default_phone_region = "FR";
 
       # Force HTTPS for link generation
       settings.overwriteprotocol = "https";
 
+      # Add apps to Nextcloud
+      extraApps = with srv.package.packages.apps; {
+        inherit calendar contacts tasks;
+      };
     };
 
     ### REVERSE PROXY ###
