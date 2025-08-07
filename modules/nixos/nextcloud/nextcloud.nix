@@ -63,6 +63,11 @@ in
       settings.trusted_proxies = [
         "127.0.0.1"
       ];
+
+      # Add trusted domains
+      settings.trusted_domains = [
+        "nc.teapot.eu.org"
+      ];
     };
 
     ### REVERSE PROXY ###
