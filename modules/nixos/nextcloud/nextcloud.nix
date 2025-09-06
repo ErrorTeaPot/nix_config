@@ -6,8 +6,6 @@
 }:
 with lib;
 let
-  # Shorter name to access a final setting
-  # All modules are under the custom attribute "def"
   cfg = config.nextcloud;
   srv = config.services.nextcloud;
   url = "nc.teapot.eu.org";
@@ -20,6 +18,8 @@ in
   };
 
   config = mkIf cfg.enable {
+
+    ### NEXTCLOUD ###
     # Change default port
     services.nginx.virtualHosts.${toString url}.listen = [
       {
@@ -37,7 +37,7 @@ in
 
       # Install and configure database automatically
       database.createLocally = true;
-      config.dbtype = "sqlite";
+      config.dbtype = "pgsql";
 
       # Applies recommended settings to Redis for small instances
       configureRedis = true;
