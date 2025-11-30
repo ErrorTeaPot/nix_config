@@ -50,6 +50,18 @@
     DNSProviderApiKeyFile = config.sops.secrets.dns-provider-api-key.path;
   };
 
+  # *arr stack
+  sops.secrets."arrvpn" = {
+    owner = "root";
+    group = "root";
+    mode = "0400";
+  };
+
+  arr = {
+    enable = true;
+    vpnConf = config.sops.secrets.arrvpn.path;
+  };
+
   # RSS server
   /*
     sops.secrets."rss" = {

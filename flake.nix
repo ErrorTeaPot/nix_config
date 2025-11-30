@@ -16,6 +16,10 @@
     # Sops nix
     sops-nix.url = "github:Mic92/sops-nix";
     sops-nix.inputs.nixpkgs.follows = "nixpkgs";
+
+    # Nixarr
+    nixarr.url = "github:rasmus-kirk/nixarr";
+    nixarr.inputs.nixpkgs.follows = "nixpkgs";
   };
 
   outputs =
@@ -25,6 +29,7 @@
       home-manager,
       disko,
       sops-nix,
+      nixarr,
       ...
     }@inputs:
     let
@@ -46,9 +51,10 @@
           specialArgs = { inherit inputs outputs; };
           modules = [
             ./hosts/servers/mikoshi/configuration.nix
+            ./hosts/servers/mikoshi/hardware-configuration.nix
             disko.nixosModules.disko
             sops-nix.nixosModules.sops
-            ./hosts/servers/mikoshi/hardware-configuration.nix
+            nixarr.nixosModules.default
           ];
         };
         agwe = nixpkgs.lib.nixosSystem {
