@@ -6,20 +6,28 @@
     nixpkgs.url = "github:nixos/nixpkgs/nixos-25.05";
 
     # Home manager
-    home-manager.url = "github:nix-community/home-manager/release-25.05";
-    home-manager.inputs.nixpkgs.follows = "nixpkgs";
+    home-manager = {
+      url = "github:nix-community/home-manager/release-25.05";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
 
     # Disko
-    disko.url = "github:nix-community/disko/latest";
-    disko.inputs.nixpkgs.follows = "nixpkgs";
+    disko = {
+      url = "github:nix-community/disko/latest";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
 
     # Sops nix
-    sops-nix.url = "github:Mic92/sops-nix";
-    sops-nix.inputs.nixpkgs.follows = "nixpkgs";
+    sops-nix = {
+      url = "github:Mic92/sops-nix";
+      sops-nix.inputs.nixpkgs.follows = "nixpkgs";
+    };
 
     # Nixarr
-    nixarr.url = "github:rasmus-kirk/nixarr";
-    nixarr.inputs.nixpkgs.follows = "nixpkgs";
+    nixarr = {
+      url = "github:rasmus-kirk/nixarr";
+      nixarr.inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs =
