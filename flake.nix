@@ -20,13 +20,13 @@
     # Sops nix
     sops-nix = {
       url = "github:Mic92/sops-nix";
-      sops-nix.inputs.nixpkgs.follows = "nixpkgs";
+      inputs.nixpkgs.follows = "nixpkgs";
     };
 
     # Nixarr
     nixarr = {
       url = "github:rasmus-kirk/nixarr";
-      nixarr.inputs.nixpkgs.follows = "nixpkgs";
+      inputs.nixpkgs.follows = "nixpkgs";
     };
   };
 
