@@ -54,6 +54,30 @@ in
                 type = "movie";
               };
               delete_old_custom_formats = true;
+              include = [
+                # Movie
+                { template = "radarr-quality-definition-movie"; }
+                { template = "radarr-quality-profile-remux-web-1080p"; }
+                { template = "radarr-custom-formats-remux-web-1080p"; }
+
+                # Anime
+                { template = "radarr-quality-definition-anime"; }
+                { template = "radarr-quality-profile-anime"; }
+                { template = "radarr-custom-formats-anime"; }
+              ];
+              custom_formats = [
+                {
+                  trash_ids = [
+                    "064af5f084a0a24458cc8ecd3220f93f" # Uncensored
+                    "9172b2f683f6223e3a1846427b417a3d" # VOSTFR
+                  ];
+                  assign_scores_to = [
+                    {
+                      name = "Remux-1080p - Anime";
+                    }
+                  ];
+                }
+              ];
             };
           };
         };
