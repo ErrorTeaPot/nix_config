@@ -3,7 +3,10 @@ with lib;
 let
   cfg = config.arr;
   url = "jellyfin.teapot.eu.org";
-  port = 8096;
+  jellyfin_port = 8096;
+  radarr_port = 7878;
+  sonarr_port = 8989;
+  vpn_forwarded_port = 51820;
 in
 {
   options.arr = {
@@ -19,20 +22,42 @@ in
 
       vpn = {
         enable = true;
-        wgConf = config.arr.vpnConf; # Fix: utilise config au lieu de cfg
+        wgConf = config.arr.vpnConf;
       };
 
       jellyfin.enable = true;
 
-      # Retire services.caddy d'ici ! Il va en bas
-
       transmission = {
         enable = true;
         vpn.enable = true;
-        peerPort = 51820;
+        peerPort = vpn_forwarded_port;
       };
 
-      recyclarr.enable = true;
+      recyclarr = {
+        enable = true;
+        configuration = {
+          sonarr = {
+            series = {
+              base_url = "http://localhost:${toString sonarr_port}";
+              api_key = "!env_var SONARR_API_KEY";
+              quality_definition = {
+                type = "series";
+              };
+              delete_old_custom_formats = true;
+            };
+          };
+          radarr = {
+            movies = {
+              base_url = "http://localhost:${toString radarr_port}";
+              api_key = "!env_var RADARR_API_KEY";
+              quality_definition = {
+                type = "movie";
+              };
+              delete_old_custom_formats = true;
+            };
+          };
+        };
+      };
       bazarr.enable = true;
       prowlarr.enable = true;
       radarr.enable = true;
@@ -40,9 +65,9 @@ in
       jellyseerr.enable = true;
     };
 
-    services.caddy.virtualHosts."jellyfin.teapot.eu.org" = {
+    services.caddy.virtualHosts.${toString url} = {
       extraConfig = ''
-        reverse_proxy http://localhost:${toString port}
+        reverse_proxy http://localhost:${toString jellyfin_port}
       '';
       useACMEHost = "teapot.eu.org";
     };
