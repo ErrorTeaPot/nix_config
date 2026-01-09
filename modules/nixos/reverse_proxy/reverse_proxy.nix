@@ -2,7 +2,6 @@
 with lib;
 let
   cfg = config.reverse_proxy;
-  srv = config.services.caddy;
 in
 {
   options.reverse_proxy = {
