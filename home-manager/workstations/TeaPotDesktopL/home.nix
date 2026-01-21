@@ -6,14 +6,15 @@
   config,
   pkgs,
   ...
-}: {
+}:
+{
   # You can import other home-manager modules here
   imports = [
     ../default.nix
   ];
 
   nixpkgs = {
-    overlays = [];
+    overlays = [ ];
     config = {
       allowUnfree = true;
       allowUnfreePredicate = _: true;
@@ -24,41 +25,43 @@
     username = "errorteapot";
     homeDirectory = "/home/errorteapot";
     packages = with pkgs; [
-	vesktop
-	signal-desktop
-	brave
-	#swww
-	fastfetch
-	stremio
-	#evince
+      vesktop
+      signal-desktop
+      brave
+      #swww
+      fastfetch
+      stremio
+      #evince
     ];
   };
 
   programs = {
     git = {
-      userName = "ErrorTeaPot";
-      userEmail = "github.z5tea@passinbox.com";
+      settings = {
+        user.name = "ErrorTeaPot";
+        user.email = "github.z5tea@passinbox.com";
+      };
     };
   };
 
   /*
-  xdg.mimeApps = {
-    enable = true;
-    associations.added = {
-      "application/pdf" = ["org.gnome.Evince.desktop"];
+    xdg.mimeApps = {
+      enable = true;
+      associations.added = {
+        "application/pdf" = ["org.gnome.Evince.desktop"];
+      };
+      defaultApplications = {
+        "application/pdf" = ["org.gnome.Evince.desktop"];
+      };
     };
-    defaultApplications = {
-      "application/pdf" = ["org.gnome.Evince.desktop"];
-    };
-  };
   */
 
   /*
-  wofi.enable = true;
-  waybar.enable = true;
-  hyprland.enable = true;
-  hyprlock.enable = true;
-  dunst.enable = true;
+    wofi.enable = true;
+    waybar.enable = true;
+    hyprland.enable = true;
+    hyprlock.enable = true;
+    dunst.enable = true;
   */
 
   alacritty.enable = true;
