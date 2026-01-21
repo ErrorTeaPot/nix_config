@@ -56,16 +56,13 @@
     };
   */
 
-  /*
-    wofi.enable = true;
-    waybar.enable = true;
-    hyprland.enable = true;
-    hyprlock.enable = true;
-    dunst.enable = true;
-  */
+  wofi.enable = true;
+  waybar.enable = true;
+  hyprland.enable = true;
+  hyprlock.enable = true;
+  dunst.enable = true;
 
   alacritty.enable = true;
-  tooling.enable = true;
 
   # Nicely reload system units when changing configs
   systemd.user.startServices = "sd-switch";
