@@ -25,13 +25,15 @@
     username = "errorteapot";
     homeDirectory = "/home/errorteapot";
     packages = with pkgs; [
-      vesktop
-      signal-desktop
-      brave
-      #swww
-      fastfetch
-      stremio
-      #evince
+      /*
+        vesktop
+        signal-desktop
+        brave
+        #swww
+        fastfetch
+        stremio
+        #evince
+      */
     ];
   };
 
