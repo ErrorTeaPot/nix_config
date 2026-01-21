@@ -1,4 +1,9 @@
-{ pkgs, lib, config, ... }:
+{
+  pkgs,
+  lib,
+  config,
+  ...
+}:
 
 {
   options = {
@@ -30,7 +35,7 @@
         # Set programs
         "$terminal" = "alacritty";
         "$fileManager" = "nautilus";
-	"$menu" = "wofi --show drun";
+        "$menu" = "wofi --show drun";
 
         # Environment variables
         env = [
@@ -54,10 +59,10 @@
           gaps_in = 5;
           gaps_out = 5;
           border_size = 2;
-            "col.active_border" = "rgb(44475a) rgb(bd93f9) 90deg";
-            "col.inactive_border" = "rgba(44475aaa)";
-            "col.nogroup_border" = "rgba(282a36dd)";
-            "col.nogroup_border_active" = "rgb(bd93f9) rgb(44475a) 90deg";
+          "col.active_border" = "rgb(44475a) rgb(bd93f9) 90deg";
+          "col.inactive_border" = "rgba(44475aaa)";
+          "col.nogroup_border" = "rgba(282a36dd)";
+          "col.nogroup_border_active" = "rgb(bd93f9) rgb(44475a) 90deg";
           resize_on_border = true;
           no_border_on_floating = false;
           layout = "dwindle";
@@ -107,15 +112,13 @@
         };
 
         # Gestures settings
-        gestures = {
-          workspace_swipe = true;
-        };
+        gesture = "3, horizontal, workspace";
 
         # Group settings
         group = {
           groupbar = {
-              "col.active" = "rgb(bd93f9) rgb(44475a) 90deg";
-              "col.inactive" = "rgba(282a36dd)";
+            "col.active" = "rgb(bd93f9) rgb(44475a) 90deg";
+            "col.inactive" = "rgba(282a36dd)";
           };
         };
 
@@ -188,4 +191,3 @@
     };
   };
 }
-
