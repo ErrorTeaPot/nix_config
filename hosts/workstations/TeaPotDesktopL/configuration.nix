@@ -81,6 +81,9 @@
       shell = pkgs.fish;
       packages = with pkgs; [
       ];
+      openssh.authorizedKeys.keys = [
+        "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIKVpBr80/MmbKtxD11QbPcAzSE2MoPj2/8t3C7dVFmPP glesaout@glesaoutSIA"
+      ];
     };
   };
 
@@ -93,6 +96,7 @@
   environment.systemPackages = with pkgs; [
     # brave
     networkmanagerapplet
+    alacritty
   ];
 
   programs = {
@@ -105,19 +109,7 @@
     };
   };
 
-  # This setups a SSH server
-  /*
-    services.openssh = {
-      enable = true;
-      settings = {
-        # Opinionated: forbid root login through SSH.
-        PermitRootLogin = "no";
-        # Opinionated: use keys only.
-        # Remove if you want to SSH using passwords
-        PasswordAuthentication = false;
-      };
-    };
-  */
+  ssh_hardening.enable = true;
 
   # Open ports in the firewall.
   # networking.firewall.allowedTCPPorts = [ ... ];
