@@ -1,7 +1,8 @@
 {
   pkgs,
   ...
-}: {
+}:
+{
   # You can import other NixOS modules here
   imports = [
     ./disk-config.nix
@@ -29,10 +30,13 @@
   services.xserver.enable = true;
 
   services.displayManager.sddm.enable = true;
-  services.gnome.gnome-keyring.enable = true;
+  services.gnome = {
+    gnome-keyring.enable = true;
+    gcr-ssh-agent.enable = true;
+  };
 
   security.pam.services = {
-	sddm.enableGnomeKeyring = true;
+    sddm.enableGnomeKeyring = true;
   };
 
   # Configure keymap in X11
@@ -70,7 +74,10 @@
     errorteapot = {
       isNormalUser = true;
       description = "ErrorTeaPot";
-      extraGroups = ["wheel" "networkmanager"];
+      extraGroups = [
+        "wheel"
+        "networkmanager"
+      ];
       shell = pkgs.fish;
       packages = with pkgs; [
       ];
@@ -89,29 +96,27 @@
   ];
 
   programs = {
-	neovim.enable = true;
-	hyprland.enable = true;
-	fish.enable = true;
-	ssh = {
-		startAgent = false;
-    		enableAskPassword = true;
-	};
+    neovim.enable = true;
+    hyprland.enable = true;
+    fish.enable = true;
+    ssh = {
+      startAgent = false;
+      enableAskPassword = true;
+    };
   };
-
-  
 
   # This setups a SSH server
   /*
-  services.openssh = {
-    enable = true;
-    settings = {
-      # Opinionated: forbid root login through SSH.
-      PermitRootLogin = "no";
-      # Opinionated: use keys only.
-      # Remove if you want to SSH using passwords
-      PasswordAuthentication = false;
+    services.openssh = {
+      enable = true;
+      settings = {
+        # Opinionated: forbid root login through SSH.
+        PermitRootLogin = "no";
+        # Opinionated: use keys only.
+        # Remove if you want to SSH using passwords
+        PasswordAuthentication = false;
+      };
     };
-  };
   */
 
   # Open ports in the firewall.
