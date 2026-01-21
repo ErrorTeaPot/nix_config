@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 
 # Format disk
 read -p "Do we format using TeaPotDesktopL disk config ? (y/n)" -n 1 -r
