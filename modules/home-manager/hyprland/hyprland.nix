@@ -15,6 +15,7 @@
   config = lib.mkIf config.hyprland.enable {
     wayland.windowManager.hyprland = {
       enable = true;
+      systemd.enable = false;
       settings = {
         # Monitors configuration
         monitor = [
@@ -27,7 +28,7 @@
         exec-once = [
           "systemctl --user start hyprpolkitagent"
           #"swww-daemon; sleep 0.05; swww img $HOME/Pictures/Wallpapers/mario_8_bit.gif"
-          "waybar"
+          "uwsm app -- waybar"
           "dbus-update-activation-environment --all"
           "gammastep -l 48.8:2.3"
         ];
