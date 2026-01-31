@@ -93,14 +93,16 @@
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
-    # brave
     networkmanagerapplet
     alacritty
   ];
 
   programs = {
     neovim.enable = true;
-    hyprland.enable = true;
+    hyprland = {
+      enable = true;
+      withUWSM = true;
+    };
     fish.enable = true;
     ssh = {
       startAgent = false;
