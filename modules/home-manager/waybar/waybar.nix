@@ -36,7 +36,7 @@
           format-icons = [ "" "" "" ];
         };
         battery = {
-          bat = "BAT0";
+          bat = "BAT1";
           interval = 2;
           states = {
             warning = 30;
