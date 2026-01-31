@@ -29,8 +29,8 @@
           "systemctl --user start hyprpolkitagent"
           #"swww-daemon; sleep 0.05; swww img $HOME/Pictures/Wallpapers/mario_8_bit.gif"
           "uwsm app -- waybar"
-          "dbus-update-activation-environment --all"
-          "gammastep -l 48.8:2.3"
+          "uwsm app -- dbus-update-activation-environment --all"
+          #"uwsm app -- gammastep -l 48.8:2.3"
         ];
 
         # Set programs
