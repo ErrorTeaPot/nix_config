@@ -88,7 +88,6 @@
   };
 
   systemd_hardening.enable = true;
-
   fonts.fontDir.enable = true;
 
   # List packages installed in system profile. To search, run:
@@ -109,6 +108,7 @@
     };
   };
 
+  services.hypridle.enable = true;
   ssh_hardening.enable = true;
 
   # Open ports in the firewall.
