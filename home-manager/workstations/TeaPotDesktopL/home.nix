@@ -21,6 +21,8 @@
     };
   };
 
+  services.gnome-keyring.enable = true;
+
   home = {
     username = "errorteapot";
     homeDirectory = "/home/errorteapot";
@@ -63,6 +65,8 @@
   dunst.enable = true;
 
   alacritty.enable = true;
+
+
 
   # Nicely reload system units when changing configs
   systemd.user.startServices = "sd-switch";
