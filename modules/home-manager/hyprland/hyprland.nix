@@ -34,7 +34,7 @@
         ];
 
         # Set programs
-        "$terminal" = "ghostty";
+        "$terminal" = "GTK_IM_MODULE=simple ghostty";
         "$fileManager" = "nautilus";
         "$menu" = "uwsm app -- $(wofi --show drun --define=drun-print_desktop_file=true)";
 
