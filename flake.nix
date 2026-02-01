@@ -55,6 +55,14 @@
             sops-nix.nixosModules.sops
           ];
         };
+        TeaPotLaptop = nixpkgs.lib.nixosSystem {
+          specialArgs = { inherit inputs outputs; };
+          modules = [
+            ./hosts/workstations/TeaPotLaptop/configuration.nix
+            disko.nixosModules.disko
+            sops-nix.nixosModules.sops
+          ];
+        };
         mikoshi = nixpkgs.lib.nixosSystem {
           specialArgs = { inherit inputs outputs; };
           modules = [
