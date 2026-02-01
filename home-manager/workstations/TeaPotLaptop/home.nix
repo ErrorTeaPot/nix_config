@@ -35,6 +35,7 @@
     };
   };
 
+  alacritty.enable = true;
   wofi.enable = true;
   waybar.enable = true;
   hyprland.enable = true;

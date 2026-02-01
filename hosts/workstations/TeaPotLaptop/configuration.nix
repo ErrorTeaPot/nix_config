@@ -73,7 +73,7 @@
   # $ nix search wget
   environment.systemPackages = with pkgs; [
     networkmanagerapplet
-    ghostty
+    alacritty
   ];
 
   programs = {
