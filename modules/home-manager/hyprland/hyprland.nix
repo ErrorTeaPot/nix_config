@@ -36,7 +36,7 @@
         # Set programs
         "$terminal" = "alacritty";
         "$fileManager" = "nautilus";
-        "$menu" = "wofi --show drun";
+        "$menu" = "uwsm app -- $(wofi --show drun --define=drun-print_desktop_file=true)";
 
         # Environment variables
         env = [
