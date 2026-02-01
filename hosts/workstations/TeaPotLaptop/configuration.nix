@@ -17,18 +17,17 @@
 
   services.xserver.enable = true;
 
-  services.displayManager.sddm = {
+  services.displayManager.gdm = {
     enable = true;
-    wayland.enable = true;
-    theme = "sddm-astronaut";
   };
+
   services.gnome = {
     gnome-keyring.enable = true;
     gcr-ssh-agent.enable = true;
   };
 
   security.pam.services = {
-    sddm.enableGnomeKeyring = true;
+    gdm.enableGnomeKeyring = true;
   };
 
   # Configure keymap in X11
@@ -75,7 +74,6 @@
   environment.systemPackages = with pkgs; [
     networkmanagerapplet
     alacritty
-    sddm-astronaut
   ];
 
   programs = {
