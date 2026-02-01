@@ -4,13 +4,14 @@
   config,
   pkgs,
   ...
-}: {
+}:
+{
   imports = [
     ../default.nix
   ];
 
   nixpkgs = {
-    overlays = [];
+    overlays = [ ];
     config = {
       allowUnfree = true;
       # Workaround for https://github.com/nix-community/home-manager/issues/2942
@@ -21,14 +22,18 @@
   home = {
     username = "errorteapot";
     homeDirectory = "/home/errorteapot";
-    packages = with pkgs; [];
+    packages = with pkgs; [ ];
   };
 
   programs = {
     home-manager.enable = true;
+    git = {
+      settings = {
+        user.name = "ErrorTeaPot";
+        user.email = "github.z5tea@passinbox.com";
+      };
+    };
   };
-
-  tooling.enable = true;
 
   # Nicely reload system units when changing configs
   systemd.user.startServices = "sd-switch";
