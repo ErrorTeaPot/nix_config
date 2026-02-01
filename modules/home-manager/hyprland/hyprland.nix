@@ -34,7 +34,7 @@
         ];
 
         # Set programs
-        "$terminal" = "alacritty";
+        "$terminal" = "ghostty";
         "$fileManager" = "nautilus";
         "$menu" = "uwsm app -- $(wofi --show drun --define=drun-print_desktop_file=true)";
 
