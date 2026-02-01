@@ -17,7 +17,10 @@
 
   services.xserver.enable = true;
 
-  services.displayManager.sddm.enable = true;
+  services.displayManager.sddm = {
+    enable = true;
+    theme = "sddm-astronaut";
+  };
   services.gnome = {
     gnome-keyring.enable = true;
     gcr-ssh-agent.enable = true;
