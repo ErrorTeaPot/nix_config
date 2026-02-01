@@ -34,7 +34,7 @@
         ];
 
         # Set programs
-        "$terminal" = "GTK_IM_MODULE=simple ghostty";
+        "$terminal" = "ghostty";
         "$fileManager" = "nautilus";
         "$menu" = "uwsm app -- $(wofi --show drun --define=drun-print_desktop_file=true)";
 
@@ -137,7 +137,7 @@
         # Key bindings
         "$mainMod" = "SUPER";
         bind = [
-          "$mainMod, RETURN, exec, $terminal"
+          "$mainMod, RETURN, exec,GTK_IM_MODULE=simple $terminal"
           "$mainMod, Q, killactive,"
           "$mainMod, M, exit,"
           "$mainMod, E, exec, $fileManager"
