@@ -75,6 +75,7 @@
   environment.systemPackages = with pkgs; [
     networkmanagerapplet
     alacritty
+    sddm-astronaut
   ];
 
   programs = {
