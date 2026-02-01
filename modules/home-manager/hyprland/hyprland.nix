@@ -137,7 +137,7 @@
         # Key bindings
         "$mainMod" = "SUPER";
         bind = [
-          "$mainMod, RETURN, exec,GTK_IM_MODULE=simple $terminal"
+          "$mainMod, RETURN, exec, $terminal"
           "$mainMod, Q, killactive,"
           "$mainMod, M, exit,"
           "$mainMod, E, exec, $fileManager"
