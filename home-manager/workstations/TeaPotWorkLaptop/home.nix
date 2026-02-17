@@ -22,12 +22,8 @@
   home = {
     username = "glesaout";
     homeDirectory = "/home/glesaout";
-    packages = with pkgs; [
-      typst
-    ];
+    packages = with pkgs; [ ];
   };
-
-  tooling.enable = true;
 
   # Nicely reload system units when changing configs
   systemd.user.startServices = "sd-switch";
