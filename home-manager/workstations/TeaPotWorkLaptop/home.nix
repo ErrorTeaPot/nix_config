@@ -25,6 +25,16 @@
     packages = with pkgs; [ ];
   };
 
+  programs = {
+    home-manager.enable = true;
+    git = {
+      settings = {
+        user.name = "GLESAOUT";
+        user.email = "glesaout@almond.eu";
+      };
+    };
+  };
+
   # Nicely reload system units when changing configs
   systemd.user.startServices = "sd-switch";
 
