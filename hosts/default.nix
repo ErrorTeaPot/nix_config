@@ -61,5 +61,5 @@
 
   sops.defaultSopsFile = ../secrets/secrets.yaml;
   sops.defaultSopsFormat = "yaml";
-  sops.age.keyFile = "/home/errorteapot/.config/sops/age/keys.txt";
+  sops.age.keyFile = "${config.home.homeDirectory or "/home/errorteapot"}/.config/sops/age/keys.txt";
 }
