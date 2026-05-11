@@ -37,17 +37,7 @@
     };
   };
 
-  # Change GNOME settings
-  dconf.settings = {
-    "org/gnome/desktop/wm/keybindings" = {
-      close = [ "<Super>q" ];
-    };
-    "org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0" = {
-      name = "Terminal";
-      command = "ptyxis --new-window";
-      binding = "<Super>Return";
-    };
-  };
+  gnome.enable = true;
 
   # Modules
   starship.enable = true;
