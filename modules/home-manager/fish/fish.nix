@@ -16,9 +16,9 @@
       fish = {
         enable = true;
         interactiveShellInit = ''
-          	if test -e ~/.nix-profile/etc/profile.d/nix.fish
-                  . ~/.nix-profile/etc/profile.d/nix.fish
-                end
+          if test -e /etc/profile.d/nix.fish
+            source /etc/profile.d/nix.fish
+          end
         '';
         functions = {
           fish_greeting = "";
