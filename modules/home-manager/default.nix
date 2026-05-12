@@ -10,5 +10,6 @@
     ./dunst/dunst.nix
     ./tooling/tooling.nix
     ./gnome/gnome.nix
+    ./zsh/zsh.nix
   ];
 }
