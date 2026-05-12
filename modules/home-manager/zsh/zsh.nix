@@ -21,6 +21,11 @@
         path = "$XDG_CONFIG_HOME/zsh/zsh_history";
         ignoreAllDups = true;
       };
+
+      prezto = {
+        enable = true;
+        caseSensitive = false;
+      };
     };
   };
 }
