@@ -18,6 +18,7 @@
     home-manager.enable = true;
   };
 
+  fonts.fontconfig.enable = true;
   home = {
     packages = with pkgs; [
       lazygit
