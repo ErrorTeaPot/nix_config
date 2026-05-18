@@ -21,7 +21,7 @@
     };
   };
 
-  services.gnome-keyring.enable = true;
+  #services.gnome-keyring.enable = true;
 
   home = {
     username = "errorteapot";
@@ -58,13 +58,13 @@
     };
   */
 
-  wofi.enable = true;
-  waybar.enable = true;
-  hyprland.enable = true;
-  hyprlock.enable = true;
-  dunst.enable = true;
+  #wofi.enable = true;
+  #waybar.enable = true;
+  #hyprland.enable = true;
+  #hyprlock.enable = true;
+  #dunst.enable = true;
 
-  alacritty.enable = true;
+  #alacritty.enable = true;
 
 
 
