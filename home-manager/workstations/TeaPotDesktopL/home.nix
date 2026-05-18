@@ -44,6 +44,9 @@
         user.email = "github.z5tea@passinbox.com";
       };
     };
+    ghostty = {
+      enable = true;
+    };
   };
 
   /*
