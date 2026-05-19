@@ -11,5 +11,6 @@
     ./tooling/tooling.nix
     ./gnome/gnome.nix
     ./zsh/zsh.nix
+    ./wm-setup/wm-setup.nix
   ];
 }
