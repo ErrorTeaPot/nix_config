@@ -12,6 +12,7 @@
   nixpkgs = {
     overlays = [ ];
   };
+
   networking.hostName = "TeaPotLaptop";
   networking.networkmanager.enable = true;
 
@@ -29,15 +30,6 @@
   security.pam.services = {
     gdm.enableGnomeKeyring = true;
   };
-
-  # Configure keymap in X11
-  services.xserver.xkb = {
-    layout = "us";
-    variant = "intl";
-  };
-
-  # Configure console keymap
-  console.keyMap = "us-acentos";
 
   # Enable CUPS to print documents.
   services.printing.enable = true;
@@ -60,7 +52,7 @@
         "wheel"
         "networkmanager"
       ];
-      shell = pkgs.fish;
+      shell = pkgs.zsh;
       packages = with pkgs; [ ];
       openssh.authorizedKeys.keys = [ ];
     };
@@ -73,6 +65,7 @@
   # $ nix search wget
   environment.systemPackages = with pkgs; [
     networkmanagerapplet
+    ghostty
     alacritty
   ];
 

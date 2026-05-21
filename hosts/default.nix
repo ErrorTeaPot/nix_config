@@ -46,6 +46,13 @@
     device = "nodev";
   };
 
+  services.xserver.xkb = {
+    layout = "us";
+    variant = "intl";
+  };
+
+  console.keyMap = "us-acentos";
+
   programs.neovim = {
     enable = true;
     defaultEditor = true;
@@ -53,7 +60,7 @@
     viAlias = true;
   };
 
-  programs.fish.enable = true;
+  programs.zsh.enable = true;
 
   programs.git = {
     enable = true;
