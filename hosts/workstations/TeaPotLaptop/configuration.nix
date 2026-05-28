@@ -75,7 +75,6 @@
       enable = true;
       withUWSM = true;
     };
-    fish.enable = true;
     ssh = {
       startAgent = false;
       enableAskPassword = true;
@@ -83,7 +82,6 @@
   };
 
   services.hypridle.enable = true;
-  ssh_hardening.enable = true;
 
   # Open ports in the firewall.
   # networking.firewall.allowedTCPPorts = [ ... ];
