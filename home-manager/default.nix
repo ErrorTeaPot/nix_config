@@ -30,6 +30,13 @@
     options = "--delete-older-than 14d";
   };
 
+  nixpkgs = {
+    config = {
+      allowUnfree = true;
+      allowUnfreePredicate = (_: true);
+    };
+  };
+
   # Modules
   #fish.enable = true;
   zsh.enable = true;
