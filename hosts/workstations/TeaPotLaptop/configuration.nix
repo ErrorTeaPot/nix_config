@@ -18,7 +18,7 @@
 
   services.xserver.enable = true;
 
-  services.displayManager.gdm = {
+  services.displayManager.sddm = {
     enable = true;
   };
 
@@ -67,6 +67,7 @@
     networkmanagerapplet
     ghostty
     alacritty
+    brightnessctl
   ];
 
   programs = {
@@ -82,6 +83,8 @@
   };
 
   services.hypridle.enable = true;
+  services.fprintd.enable = true;
+  services.fprintd.tod.enable = true;
 
   # Open ports in the firewall.
   # networking.firewall.allowedTCPPorts = [ ... ];
