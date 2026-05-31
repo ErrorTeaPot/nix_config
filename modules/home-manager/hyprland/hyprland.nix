@@ -40,8 +40,6 @@
 
         # Environment variables
         env = [
-          "XCURSOR_SIZE,24;"
-          "QT_QPA_PLATFORMTHEME,qt5ct;"
         ];
 
         # Input settings
