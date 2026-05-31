@@ -53,7 +53,7 @@
         "networkmanager"
       ];
       shell = pkgs.zsh;
-      packages = with pkgs; [ ];
+      packages = with pkgs; [];
       openssh.authorizedKeys.keys = [ ];
     };
   };
@@ -68,6 +68,8 @@
     ghostty
     alacritty
     brightnessctl
+    ripgrep
+    hyprpolkitagent
   ];
 
   programs = {
@@ -84,7 +86,11 @@
 
   services.hypridle.enable = true;
   services.fprintd.enable = true;
-  services.fprintd.tod.enable = true;
+  services.fprintd.tod = {
+    enable = true;
+    driver = pkgs.libfprint-2-tod1-goodix;
+  };
+  security.pam.services.hyprlock.fprintAuth = true;
 
   # Open ports in the firewall.
   # networking.firewall.allowedTCPPorts = [ ... ];
