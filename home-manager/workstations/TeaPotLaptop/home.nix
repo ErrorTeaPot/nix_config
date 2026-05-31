@@ -22,7 +22,10 @@
   home = {
     username = "errorteapot";
     homeDirectory = "/home/errorteapot";
-    packages = with pkgs; [ ];
+    packages = with pkgs; [
+      brave
+      signal-desktop
+    ];
   };
 
   programs = {
