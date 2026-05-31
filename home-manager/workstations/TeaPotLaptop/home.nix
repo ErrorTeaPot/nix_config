@@ -25,6 +25,7 @@
     packages = with pkgs; [
       brave
       signal-desktop
+      localsend
     ];
   };
 
