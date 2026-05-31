@@ -38,8 +38,6 @@
     };
   };
 
-  gnome.enable = true;
-
   # Modules
   starship.enable = true;
 }
