@@ -65,7 +65,7 @@
           "col.nogroup_border" = "rgba(282a36dd)";
           "col.nogroup_border_active" = "rgb(bd93f9) rgb(44475a) 90deg";
           resize_on_border = true;
-          no_border_on_floating = false;
+          #no_border_on_floating = false;
           layout = "dwindle";
           allow_tearing = false;
         };
@@ -103,7 +103,7 @@
 
         # Dwindle layout settings
         dwindle = {
-          pseudotile = true;
+          #pseudotile = true;
           preserve_split = true;
         };
 
@@ -129,9 +129,9 @@
         };
 
         # Window rules
-        windowrulev2 = [
-          "opacity 0.8 0.8, class:(kitty),title:(kitty)"
-          "bordercolor rgb(ff5555),xwayland:1"
+        windowrule = [
+          #"opacity 0.8 0.8, class:(kitty),title:(kitty)"
+          #"bordercolor rgb(ff5555),xwayland:1"
         ];
 
         # Key bindings
@@ -144,7 +144,7 @@
           "$mainMod, V, togglefloating,"
           "$mainMod, D, exec, $menu"
           "$mainMod, P, pseudo,"
-          "$mainMod, J, togglesplit,"
+          "$mainMod, J, layoutmsg, togglesplit"
           "$mainMod, L, exec, hyprlock"
           "$mainMod, left, movefocus, l"
           "$mainMod, right, movefocus, r"
