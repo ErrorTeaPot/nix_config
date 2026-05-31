@@ -28,7 +28,7 @@
   };
 
   security.pam.services = {
-    gdm.enableGnomeKeyring = true;
+    sddm.enableGnomeKeyring = true;
   };
 
   # Enable CUPS to print documents.
