@@ -51,6 +51,8 @@
     variant = "intl";
   };
 
+  services.fwupd.enable = true;
+
   console.keyMap = "us-acentos";
 
   programs.neovim = {
