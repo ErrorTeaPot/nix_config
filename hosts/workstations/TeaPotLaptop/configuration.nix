@@ -20,6 +20,7 @@
 
   services.displayManager.sddm = {
     enable = true;
+    wayland = true;
   };
 
   # Enable CUPS to print documents.
@@ -44,7 +45,7 @@
         "networkmanager"
       ];
       shell = pkgs.zsh;
-      packages = with pkgs; [];
+      packages = with pkgs; [ ];
       openssh.authorizedKeys.keys = [ ];
     };
   };
@@ -57,7 +58,6 @@
   # $ nix search wget
   environment.systemPackages = with pkgs; [
     networkmanagerapplet
-    ghostty
     alacritty
     brightnessctl
     ripgrep
