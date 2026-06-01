@@ -36,6 +36,9 @@
         dates = "daily";
         options = "--delete-older-than 7d";
       };
+
+      # Optimise store automatically
+      optimise.automatic = true;
     };
 
   # Enable grub as boot loader
