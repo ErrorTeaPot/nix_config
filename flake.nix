@@ -24,10 +24,12 @@
     };
 
     # Nixarr
-    nixarr = {
-      url = "github:rasmus-kirk/nixarr";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
+    /*
+      nixarr = {
+        url = "github:rasmus-kirk/nixarr";
+        inputs.nixpkgs.follows = "nixpkgs";
+      };
+    */
   };
 
   outputs =
@@ -37,7 +39,7 @@
       home-manager,
       disko,
       sops-nix,
-      nixarr,
+      #nixarr,
       ...
     }@inputs:
     let
@@ -70,7 +72,7 @@
             ./hosts/servers/mikoshi/hardware-configuration.nix
             disko.nixosModules.disko
             sops-nix.nixosModules.sops
-            nixarr.nixosModules.default
+            #nixarr.nixosModules.default
           ];
         };
         agwe = nixpkgs.lib.nixosSystem {
