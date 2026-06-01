@@ -20,7 +20,7 @@
 
   services.displayManager.sddm = {
     enable = true;
-    wayland = true;
+    wayland.enable = true;
   };
 
   # Enable CUPS to print documents.
