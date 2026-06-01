@@ -22,15 +22,6 @@
     enable = true;
   };
 
-  services.gnome = {
-    gnome-keyring.enable = true;
-    gcr-ssh-agent.enable = true;
-  };
-
-  security.pam.services = {
-    sddm.enableGnomeKeyring = true;
-  };
-
   # Enable CUPS to print documents.
   services.printing.enable = true;
 
@@ -59,6 +50,7 @@
   };
 
   systemd_hardening.enable = true;
+  wm-setup.enable = true;
   fonts.fontDir.enable = true;
 
   # List packages installed in system profile. To search, run:
@@ -73,18 +65,9 @@
   ];
 
   programs = {
-    neovim.enable = true;
-    hyprland = {
-      enable = true;
-      withUWSM = true;
-    };
-    ssh = {
-      startAgent = false;
-      enableAskPassword = true;
-    };
   };
 
-  services.hypridle.enable = true;
+  # Fingerprint auth
   services.fprintd.enable = true;
   services.fprintd.tod = {
     enable = true;

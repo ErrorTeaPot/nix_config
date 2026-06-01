@@ -8,5 +8,6 @@
     ./rss/rss.nix
     ./nextcloud/nextcloud.nix
     ./arr/arr.nix
+    ./wm-setup/wm-setup.nix
   ];
 }
