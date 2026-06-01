@@ -26,6 +26,8 @@
       brave
       signal-desktop
       localsend
+      papers
+      ente-desktop
     ];
   };
 
