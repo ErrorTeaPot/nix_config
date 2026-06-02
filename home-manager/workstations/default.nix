@@ -40,4 +40,5 @@
 
   # Modules
   starship.enable = true;
+  neovim.enable = true;
 }

@@ -13,5 +13,6 @@
     ./zsh/zsh.nix
     ./wm-setup/wm-setup.nix
     ./hyprpaper/hyprpaper.nix
+    ./neovim/neovim.nix
   ];
 }
