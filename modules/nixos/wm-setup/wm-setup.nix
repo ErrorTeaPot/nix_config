@@ -33,6 +33,10 @@ in
     # Idle daemon
     services.hypridle.enable = true;
 
+    # Power management
+    services.tlp.enable = true;
+    services.tlp.pd.enable = true;
+
     # Enable programs
     programs = {
       hyprland = {
@@ -50,7 +54,6 @@ in
     };
 
     environment.systemPackages = with pkgs; [
-      libsecret
     ];
   };
 }
