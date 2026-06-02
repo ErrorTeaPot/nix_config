@@ -221,6 +221,18 @@
                   background: @pine;
                 }
 
+                #power-profiles-daemon {
+                  margin-top: 8px;
+                  margin-left: 8px;
+                  padding-left: 16px;
+                  padding-right: 16px;
+                  margin-bottom: 0;
+                  border-radius: 26px;
+                  transition: none;
+                  color: @surface;
+                  background: @gold;
+                }
+
                 #tray {
                   margin-top: 8px;
                   margin-left: 8px;
