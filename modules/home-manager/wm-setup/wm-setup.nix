@@ -11,7 +11,9 @@
       enable = lib.mkEnableOption "Enables wm-setup settings application";
 
       cursor = {
-        enable = lib.mkEnableOption "Custom cursor theme" // { default = true; };
+        enable = lib.mkEnableOption "Custom cursor theme" // {
+          default = true;
+        };
         name = lib.mkOption {
           type = lib.types.str;
           default = "BreezeX-RosePineDawn-Linux";
@@ -33,8 +35,9 @@
 
   config = lib.mkIf config.wm-setup.enable {
     hyprland.enable = true;
-    dunst.enable = true;
     hyprlock.enable = true;
+    hyprpaper.enable = true;
+    dunst.enable = true;
     waybar.enable = true;
     wofi.enable = true;
 

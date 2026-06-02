@@ -12,5 +12,6 @@
     ./gnome/gnome.nix
     ./zsh/zsh.nix
     ./wm-setup/wm-setup.nix
+    ./hyprpaper/hyprpaper.nix
   ];
 }
