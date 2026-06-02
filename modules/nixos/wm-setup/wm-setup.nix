@@ -21,8 +21,13 @@ in
       gnome-keyring.enable = true;
       gcr-ssh-agent.enable = true;
     };
+
     security.pam.services = {
       sddm.enableGnomeKeyring = true;
+      gnome-keyring = {
+        name = "gnome-keyring";
+        enableGnomeKeyring = true;
+      };
     };
 
     # Idle daemon
@@ -37,6 +42,10 @@ in
       ssh = {
         startAgent = false;
         enableAskPassword = true;
+      };
+      gnupg.agent = {
+        enable = true;
+        enableSSHSupport = false;
       };
     };
 
