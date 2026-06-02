@@ -37,6 +37,21 @@ in
     services.tlp.enable = true;
     services.tlp.pd.enable = true;
 
+    # ZRAM config
+    ## Enables Out-Of-Memory handling
+    systemd.oomd = {
+      enable = true;
+      enableUserSlices = true;
+      enableSystemSlice = true;
+      enableRootSlice = false;
+    };
+
+    zramSwap = {
+      enable = true;
+      memoryPercent = 50;
+      algorithm = "zstd"; # Fast and efficient
+    };
+
     # Enable programs
     programs = {
       hyprland = {
