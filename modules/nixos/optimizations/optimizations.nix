@@ -7,11 +7,11 @@
 with lib;
 let
   # Shorter name to access a final setting
-  cfg = config.wm-setup;
+  cfg = config.optimization;
 in
 {
-  options.wm-setup = {
-    enable = mkEnableOption "Window manager setup";
+  options.optimization = {
+    enable = mkEnableOption "Optimize stuff";
   };
 
   config = mkIf cfg.enable {
