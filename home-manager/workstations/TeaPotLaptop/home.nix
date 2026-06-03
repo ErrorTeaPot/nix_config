@@ -27,8 +27,9 @@
       signal-desktop
       localsend
       papers
-      ente-desktop
       obsidian
+      rustup
+      gcc
     ];
   };
 
