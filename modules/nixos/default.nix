@@ -10,5 +10,6 @@
     ./arr/arr.nix
     ./wm-setup/wm-setup.nix
     ./optimizations/optimizations.nix
+    ./hardening/hardening.nix
   ];
 }
