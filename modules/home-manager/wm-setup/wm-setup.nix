@@ -41,6 +41,15 @@
     waybar.enable = true;
     wofi.enable = true;
 
+    # Icon theming
+    gtk = {
+      enable = true;
+      iconTheme = {
+        name = "Papirus";
+        package = pkgs.papirus-icon-theme;
+      };
+    };
+
     home.pointerCursor = lib.mkIf config.wm-setup.cursor.enable {
       name = config.wm-setup.cursor.name;
       package = config.wm-setup.cursor.package;
