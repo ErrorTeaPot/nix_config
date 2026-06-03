@@ -35,28 +35,6 @@ in
       extraPortals = [ pkgs.xdg-desktop-portal-hyprland ];
     };
 
-    # Idle daemon
-    services.hypridle.enable = true;
-
-    # Power management
-    services.tlp.enable = true;
-    services.tlp.pd.enable = true;
-
-    # ZRAM config
-    ## Enables Out-Of-Memory handling
-    systemd.oomd = {
-      enable = true;
-      enableUserSlices = true;
-      enableSystemSlice = true;
-      enableRootSlice = false;
-    };
-
-    zramSwap = {
-      enable = true;
-      memoryPercent = 50;
-      algorithm = "zstd"; # Fast and efficient
-    };
-
     # Enable programs
     programs = {
       hyprland = {
@@ -73,7 +51,6 @@ in
       };
     };
 
-    environment.systemPackages = with pkgs; [
-    ];
+    environment.systemPackages = with pkgs; [ ];
   };
 }

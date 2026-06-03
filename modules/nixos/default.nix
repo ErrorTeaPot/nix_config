@@ -9,5 +9,6 @@
     ./nextcloud/nextcloud.nix
     ./arr/arr.nix
     ./wm-setup/wm-setup.nix
+    ./optimizations/optimizations.nix
   ];
 }
