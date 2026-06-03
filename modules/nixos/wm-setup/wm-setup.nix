@@ -17,17 +17,22 @@ in
   config = mkIf cfg.enable {
 
     # Enable keyring
+    programs.seahorse.enable = true;
     services.gnome = {
       gnome-keyring.enable = true;
       gcr-ssh-agent.enable = true;
     };
 
+    # Enables auto-unlock
     security.pam.services = {
       sddm.enableGnomeKeyring = true;
-      gnome-keyring = {
-        name = "gnome-keyring";
-        enableGnomeKeyring = true;
-      };
+    };
+
+    xdg.portal = {
+      enable = true;
+      wlr.enable = true;
+      xdgOpenUsePortal = true;
+      extraPortals = [ pkgs.xdg-desktop-portal-hyprland ];
     };
 
     # Idle daemon
