@@ -26,11 +26,9 @@
 
         # Execute commands at launch
         exec-once = [
-          "systemctl --user start hyprpolkitagent"
-          #"swww-daemon; sleep 0.05; swww img $HOME/Pictures/Wallpapers/mario_8_bit.gif"
+          #"systemctl --user start hyprpolkitagent"
           "uwsm app -- waybar"
           "uwsm app -- dbus-update-activation-environment --all"
-          #"uwsm app -- gammastep -l 48.8:2.3"
         ];
 
         # Set programs
