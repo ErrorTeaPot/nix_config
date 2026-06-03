@@ -28,6 +28,7 @@
       localsend
       papers
       ente-desktop
+      obsidian
     ];
   };
 
