@@ -52,6 +52,8 @@
 
   systemd_hardening.enable = true;
   wm-setup.enable = true;
+  optimization.enable = true;
+  hardening.enable = true;
   fonts.fontDir.enable = true;
 
   # List packages installed in system profile. To search, run:
@@ -65,7 +67,18 @@
   ];
 
   programs = {
+    thunar = {
+      enable = true;
+      plugins = with pkgs; [
+        thunar-volman
+        thunar-archive-plugin
+      ];
+    };
+    xfconf.enable = true; # XFCE save preferences
   };
+
+  services.gvfs.enable = true; # Mount, trash, and other functionalities
+  services.tumbler.enable = true; # Thumbnail support for images
 
   # Fingerprint auth
   services.fprintd.enable = true;
