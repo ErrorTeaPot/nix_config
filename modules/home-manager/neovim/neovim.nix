@@ -19,5 +19,6 @@
       defaultEditor = true;
       sideloadInitLua = true;
     };
+    home.packages = with pkgs; [ nodejs unzip ];
   };
 }
