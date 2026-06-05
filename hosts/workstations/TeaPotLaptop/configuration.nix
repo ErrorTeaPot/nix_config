@@ -23,6 +23,11 @@
     wayland.enable = true;
   };
 
+  # Try to enable ROCm
+  hardware.graphics.enable = true;
+  nixpkgs.config.rocmSupport = true;
+  hardware.amdgpu.opencl.enable = true;
+
   # Enable CUPS to print documents.
   services.printing.enable = true;
 
@@ -64,6 +69,14 @@
     brightnessctl
     ripgrep
     hyprpolkitagent
+    gdb
+    python3
+    (ghidra.withExtensions (
+      extensions: with extensions; [
+        ghidra-golanganalyzerextension
+        wasm
+      ]
+    ))
   ];
 
   programs = {
@@ -75,6 +88,7 @@
       ];
     };
     xfconf.enable = true; # XFCE save preferences
+    nix-ld.enable = true;
   };
 
   services.gvfs.enable = true; # Mount, trash, and other functionalities
