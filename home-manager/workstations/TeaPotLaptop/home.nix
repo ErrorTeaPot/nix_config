@@ -30,6 +30,7 @@
       obsidian
       rustup
       gcc
+      discord
     ];
   };
 
