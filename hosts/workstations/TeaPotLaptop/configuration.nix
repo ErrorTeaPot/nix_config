@@ -28,6 +28,9 @@
   nixpkgs.config.rocmSupport = true;
   hardware.amdgpu.opencl.enable = true;
 
+  # Enable virt
+  virtualisation.libvirtd.enable = true;
+
   # Enable CUPS to print documents.
   services.printing.enable = true;
 
@@ -48,6 +51,7 @@
       extraGroups = [
         "wheel"
         "networkmanager"
+        "libvirtd"
       ];
       shell = pkgs.zsh;
       packages = with pkgs; [ ];
@@ -70,6 +74,8 @@
     ripgrep
     hyprpolkitagent
     gdb
+    file
+    qemu
     python3
     (ghidra.withExtensions (
       extensions: with extensions; [
@@ -89,6 +95,9 @@
     };
     xfconf.enable = true; # XFCE save preferences
     nix-ld.enable = true;
+    virt-manager = {
+      enable = true;
+    };
   };
 
   services.gvfs.enable = true; # Mount, trash, and other functionalities
