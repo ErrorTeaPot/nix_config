@@ -31,6 +31,7 @@
       rustup
       gcc
       discord
+      vlc
     ];
   };
 
