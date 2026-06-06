@@ -72,6 +72,7 @@
     file
     proton-vpn
     qemu
+    pavucontrol
     python3
     (ghidra.withExtensions (
       extensions: with extensions; [
