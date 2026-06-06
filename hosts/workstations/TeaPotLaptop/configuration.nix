@@ -18,11 +18,6 @@
 
   services.xserver.enable = true;
 
-  services.displayManager.sddm = {
-    enable = true;
-    wayland.enable = true;
-  };
-
   # Try to enable ROCm
   hardware.graphics.enable = true;
   nixpkgs.config.rocmSupport = true;
@@ -75,6 +70,7 @@
     hyprpolkitagent
     gdb
     file
+    proton-vpn
     qemu
     python3
     (ghidra.withExtensions (

@@ -6,8 +6,14 @@
 }:
 with lib;
 let
-  # Shorter name to access a final setting
   cfg = config.wm-setup;
+  custom-sddm-astronaut = pkgs.sddm-astronaut.override {
+    embeddedTheme = "jake_the_dog";
+    #themeConfig = {
+    #  Background = "path/to/background.jpg";
+    #  Font = "M+1 Nerd Font";
+    #};
+  };
 in
 {
   options.wm-setup = {
@@ -15,6 +21,22 @@ in
   };
 
   config = mkIf cfg.enable {
+
+    # Enables SDDM
+    services.displayManager.sddm = {
+      enable = true;
+      wayland.enable = true;
+
+      extraPackages = with pkgs; [
+        custom-sddm-astronaut
+      ];
+      theme = "sddm-astronaut-theme";
+      settings = {
+        Theme = {
+          Current = "sddm-astronaut-theme";
+        };
+      };
+    };
 
     # Enable keyring
     programs.seahorse.enable = true;
@@ -51,6 +73,8 @@ in
       };
     };
 
-    environment.systemPackages = with pkgs; [ ];
+    environment.systemPackages = with pkgs; [
+      custom-sddm-astronaut
+    ];
   };
 }
