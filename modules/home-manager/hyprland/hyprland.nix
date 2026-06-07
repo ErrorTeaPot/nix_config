@@ -19,10 +19,7 @@
       settings = {
         # Monitors configuration
         monitor = [
-          "DP-2, 1920x1080@144, auto, 1"
-          "eDP-1, 1920x1080@60.00300, auto, 1"
           ",preferred,auto,1"
-          "HDMI-A-1, 1366x768@59.79000, auto, 1"
         ];
 
         # Execute commands at launch
