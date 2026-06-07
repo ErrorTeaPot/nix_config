@@ -1,4 +1,9 @@
-{ pkgs, lib, config, ... }:
+{
+  pkgs,
+  lib,
+  config,
+  ...
+}:
 {
   options = {
     hyprpaper = {
@@ -12,7 +17,7 @@
       settings = {
         wallpaper = [
           {
-            monitor = "eDP-1";
+            monitor = "";
             path = "~/Images/Wallpapers/idktf.png";
           }
         ];
@@ -20,4 +25,3 @@
     };
   };
 }
-
