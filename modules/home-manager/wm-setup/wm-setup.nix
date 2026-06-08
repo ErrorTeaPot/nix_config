@@ -50,6 +50,26 @@
       };
     };
 
+    xdg = {
+      portal = {
+        enable = true;
+        xdgOpenUsePortal = true;
+        extraPortals = with pkgs; [
+          #kdePackages.xdg-desktop-portal-kde
+          xdg-desktop-portal-gtk
+        ];
+      };
+      mime.defaultApplications = {
+        "x-scheme-handler/http" = "brave-browser.desktop";
+        "x-scheme-handler/https" = "brave-browser.desktop";
+        "x-scheme-handler/pdf" = "org.gnome.Papers.desktop";
+        "x-scheme-handler/about" = "brave-browser.desktop";
+        "x-scheme-handler/unknow" = "brave-browser.desktop";
+
+        "image/*" = "pix.desktop";
+      };
+    };
+
     home.pointerCursor = lib.mkIf config.wm-setup.cursor.enable {
       name = config.wm-setup.cursor.name;
       package = config.wm-setup.cursor.package;
