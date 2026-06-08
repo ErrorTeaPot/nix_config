@@ -49,7 +49,10 @@
         "libvirtd"
       ];
       shell = pkgs.zsh;
-      packages = with pkgs; [ ];
+      packages = with pkgs; [
+        file-roller
+        yazi
+      ];
       openssh.authorizedKeys.keys = [ ];
     };
   };
