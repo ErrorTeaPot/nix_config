@@ -66,6 +66,7 @@
         #"x-scheme-handler/unknow" = "brave-browser.desktop";
 
         "application/pdf" = "org.gnome.Papers.desktop";
+        "application/*zip" = "org.gnome.FileRoller.desktop";
         "video/*" = "vlc.desktop";
       };
     };
