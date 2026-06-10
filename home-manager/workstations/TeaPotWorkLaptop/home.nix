@@ -24,7 +24,6 @@
     homeDirectory = "/home/glesaout";
     packages = with pkgs; [
       terraform
-      vagrant
     ];
   };
 
