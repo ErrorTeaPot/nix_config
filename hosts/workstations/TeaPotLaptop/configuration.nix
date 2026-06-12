@@ -100,6 +100,7 @@
       enable = true;
     };
     steam.enable = true;
+    gamemode.enable = true;
   };
 
   services.gvfs.enable = true; # Mount, trash, and other functionalities
