@@ -53,6 +53,7 @@
         file-roller
         yazi
         veracrypt
+        bluetui
       ];
       openssh.authorizedKeys.keys = [ ];
     };
