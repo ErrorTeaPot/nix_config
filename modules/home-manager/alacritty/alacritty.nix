@@ -1,4 +1,9 @@
-{ pkgs, lib, config, ... }:
+{
+  pkgs,
+  lib,
+  config,
+  ...
+}:
 
 {
   options = {
@@ -11,33 +16,37 @@
     programs.alacritty = {
       enable = true;
       settings = {
-      	window = {
-	  opacity = 0.8;
-	  padding = {
-	    x = 5;
-	    y = 5;
-	  };
-	  decorations = "None";
-	};
-	font = {
-	  normal = {
-	    family = "CaskaydiaCove Nerd Font";
-	  };
-	  size = 14.0;
-	};
-	env = {
+        window = {
+          opacity = 0.8;
+          padding = {
+            x = 5;
+            y = 5;
+          };
+          decorations = "None";
+        };
+        font = {
+          normal = {
+            family = "CaskaydiaCove Nerd Font";
+          };
+          size = 12.0;
+        };
+        env = {
           TERM = "xterm-256color";
         };
         cursor = {
-          style = { shape = "Beam"; blinking = "On"; };
-          vi_mode_style = { shape = "Block"; };
-	};
-	general = {
-	  live_config_reload = true;
-	};
+          style = {
+            shape = "Beam";
+            blinking = "On";
+          };
+          vi_mode_style = {
+            shape = "Block";
+          };
+        };
+        general = {
+          live_config_reload = true;
+        };
       };
       theme = "rose_pine_moon";
     };
   };
 }
-
