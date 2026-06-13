@@ -69,7 +69,6 @@
   # $ nix search wget
   environment.systemPackages = with pkgs; [
     networkmanagerapplet
-    alacritty
     brightnessctl
     ripgrep
     hyprpolkitagent

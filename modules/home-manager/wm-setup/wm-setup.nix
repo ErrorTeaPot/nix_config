@@ -40,6 +40,7 @@
     dunst.enable = true;
     waybar.enable = true;
     wofi.enable = true;
+    alacritty.enable = true;
 
     # Icon theming
     gtk = {
