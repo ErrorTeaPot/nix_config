@@ -54,7 +54,6 @@
         yazi
         veracrypt
         bluetui
-        stremio-linux-shell
       ];
       openssh.authorizedKeys.keys = [ ];
     };
