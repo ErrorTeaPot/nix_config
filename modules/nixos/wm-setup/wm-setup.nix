@@ -49,6 +49,7 @@ in
     security.pam.services = {
       sddm.enableGnomeKeyring = true;
     };
+    boot.initrd.systemd.enable = true; # see if it changes keyring unlock
 
     xdg.portal = {
       enable = true;
