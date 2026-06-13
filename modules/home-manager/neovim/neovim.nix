@@ -18,7 +18,11 @@
       vimAlias = true;
       defaultEditor = true;
       sideloadInitLua = true;
+      withRuby = true; # Port for state 26.05
     };
-    home.packages = with pkgs; [ nodejs unzip ];
+    home.packages = with pkgs; [
+      nodejs
+      unzip
+    ];
   };
 }
