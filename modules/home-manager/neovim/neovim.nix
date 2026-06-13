@@ -18,7 +18,8 @@
       vimAlias = true;
       defaultEditor = true;
       sideloadInitLua = true;
-      withRuby = true; # Port for state 26.05
+      withRuby = false; # Port for state 26.05
+      withPython3 = false; # Same
     };
     home.packages = with pkgs; [
       nodejs
