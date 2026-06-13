@@ -21,6 +21,8 @@ in
     # Power management
     services.tlp.enable = true;
     services.tlp.pd.enable = true;
+    powerManagement.enable = true;
+    services.upower.enable = true;
 
     # ZRAM config
     ## Enables Out-Of-Memory handling
