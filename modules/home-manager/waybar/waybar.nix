@@ -19,7 +19,8 @@
         topBar = {
           layer = "top";
           modules-left = [ "hyprland/workspaces" ];
-          modules-center = [ ];
+          modules-center = [
+          ];
           modules-right = [
             "custom/nm-applet"
             "wireplumber"
@@ -63,7 +64,6 @@
             ];
           };
           battery = {
-            #bat = "BAT0";
             interval = 2;
             states = {
               warning = 30;
