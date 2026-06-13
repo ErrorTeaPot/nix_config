@@ -17,7 +17,6 @@
       enable = true;
       systemd.enable = false;
       settings = {
-        # Monitors configuration
         monitor = [
           ",preferred,auto,1"
         ];
@@ -59,7 +58,6 @@
           "col.nogroup_border" = "rgba(282a36dd)";
           "col.nogroup_border_active" = "rgb(bd93f9) rgb(44475a) 90deg";
           resize_on_border = true;
-          #no_border_on_floating = false;
           layout = "dwindle";
           allow_tearing = false;
         };
