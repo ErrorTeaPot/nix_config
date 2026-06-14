@@ -23,15 +23,7 @@
     username = "errorteapot";
     homeDirectory = "/home/errorteapot";
     packages = with pkgs; [
-      brave
-      signal-desktop
-      localsend
-      papers
-      obsidian
-      rustup
-      gcc
-      discord
-      vlc
+      brave # Because of the default apps config
     ];
   };
 

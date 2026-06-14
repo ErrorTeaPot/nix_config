@@ -54,6 +54,14 @@
         yazi
         veracrypt
         bluetui
+        signal-desktop
+        localsend
+        papers
+        obsidian
+        rustup
+        gcc
+        discord
+        vlc
       ];
       openssh.authorizedKeys.keys = [ ];
     };
@@ -78,12 +86,12 @@
     qemu
     pavucontrol
     python3
-    (ghidra.withExtensions (
-      extensions: with extensions; [
-        ghidra-golanganalyzerextension
-        wasm
-      ]
-    ))
+    #(ghidra.withExtensions (
+    #extensions: with extensions; [
+    #ghidra-golanganalyzerextension
+    #wasm
+    #]
+    #))
   ];
 
   programs = {
