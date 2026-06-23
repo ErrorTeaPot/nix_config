@@ -42,6 +42,10 @@
         switch-to-workspace-left = [ "<Super>Left" ];
         switch-to-workspace-right = [ "<Super>Right" ];
       };
+      ## Change interface
+      "org/gnome/desktop/interface" = {
+        show-battery-percentage = true;
+      };
     };
   };
 }
